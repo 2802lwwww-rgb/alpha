@@ -1,0 +1,601 @@
+expression,desc
+"ts_decay_linear(group_neutralize(rank(mdl177_2_globaldevnorthamerica_v502_actrtn6m * mdl177_earningsmomemtummodel_fc_numrevy1_alt / (fnd6_txs + 0.001)), subindustry), 10)",结合6个月实际收益率与分析师修正动量，并利用税收支出进行市值中性化后的财务过滤，捕捉盈余超预期信号。
+"ts_decay_linear(group_neutralize(rank(abnormal_return_earnings_release / (mdl77_liquidityriskfactor_tobinq + 0.001)), subindustry), 12)",通过托宾Q值对财报发布后的异常收益进行标准化，剔除估值过高标的，提取纯净的盈余公告后漂移（PEAD）效应。
+"ts_decay_linear(group_neutralize(rank(mdl177_liquidityriskfactor_nlvolcap_alt * fn_comprehensive_income_net_of_tax_a / (fnd6_optrfr + 0.001)), subindustry), 5)",将非线性容量波动风险与净利润率相结合，旨在子行业内部寻找财务基本面稳健且具备波动溢价的资产。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_industryrrelativevaluefactor_curindsp_ / (fnd6_newa2v1300_spceeps + 0.001)), subindustry), 15)",利用行业相对价值因子结合特殊EPS调整后的收益，在消除行业Beta后挖掘底层资产的相对估值差。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_pricemomentumfactor_cvpre90dp * fnd6_newa1v1300_ano), subindustry), 10)",结合价格动量的变异系数与分析师覆盖频次，识别在分析师关注度高且波动率受控下的趋势延续特征。
+"ts_decay_linear(group_neutralize(rank(mdl77_2gdna_epschgetr + fnd6_ein / (fnd6_fatc + 0.001)), subindustry), 20)",通过EPS变动轨迹与权益投资收益比率的复合，利用固定资产周转率去中心化，捕捉高质量增长信号。
+"ts_decay_linear(group_neutralize(rank(mdl77_2pricemomentumfactor_chg6malpha18m * fnd6_cipen / (fnd6_ivaco + 0.001)), subindustry), 10)",将长期价格Alpha与养老金负债调整项结合，并以库存价值变动进行风险对冲，过滤市值相关的虚假动量。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_globaldevnorthamerica_v502_fc_curindfwdep_ * fnd6_state), subindustry), 5)",行业前瞻依赖模型与财务州级状态因子的交互，旨在通过宏观财务分布修正行业内的个股偏好。
+"ts_decay_linear(group_neutralize(rank(mdl77_liquidityriskfactor_tobinq / (mdl77_2gdna_epschgetr + 0.001)), subindustry), 10)",托宾Q值与EPS变化率的反向比值，识别在行业内部被市场低估且盈利增长稳健的去市值Alpha。
+"ts_decay_linear(group_neutralize(rank(mdl177_earningsmomemtummodel_fc_numrevy1_alt * fn_comprehensive_income_net_of_tax_a / (fnd6_fatc + 0.001)), subindustry), 12)",分析师一致预期修正与综合收益的乘积模型，并由固定资产配置效率进行缩放，强化盈余弹性。
+"ts_decay_linear(group_neutralize(rank(abnormal_return_earnings_release * fnd6_newa1v1300_ano / (fnd6_txs + 0.001)), subindustry), 8)",财报异常收益在分析师关注度下的杠杆效应，通过税务杠杆中性化，聚焦纯粹的非预期盈利表现。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_pricemomentumfactor_cvpre90dp / (fnd6_optrfr + 0.001)), subindustry), 10)",价格动量波动性对营业收入的穿透分析，在子行业内剥离由于公司规模扩张带来的Beta收益。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_industryrrelativevaluefactor_curindsp_ * fnd6_ivaco), subindustry), 5)",行业相对价值与存货计价变动的交互因子，反映在不同库存周期下的行业估值修复逻辑。
+"ts_decay_linear(group_neutralize(rank(mdl177_liquidityriskfactor_nlvolcap_alt - fnd6_cipen / (fnd6_newa2v1300_spceeps + 0.001)), subindustry), 10)",非线性波动容量与养老金调整项的残差逻辑，旨在剥离财务隐性负债对流动性溢价的冲击。
+"ts_decay_linear(group_neutralize(rank(mdl77_2pricemomentumfactor_chg6malpha18m / (mdl177_2_globaldevnorthamerica_v502_fc_curindfwdep_ + 0.001)), subindustry), 15)",对长期超额收益进行行业前瞻依赖度的敏感性剥离，获取不受行业周期Beta影响的纯净动量。
+"ts_decay_linear(group_neutralize(rank(fnd6_ein * mdl177_earningsmomemtummodel_fc_numrevy1_alt / (fnd6_state + 0.001)), subindustry), 10)",权益投资收益与盈利预测修正的结合，通过区域财务特征进行截面中性化处理。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_globaldevnorthamerica_v502_actrtn6m - ts_mean(mdl177_2_globaldevnorthamerica_v502_actrtn6m, 20)), subindustry), 20)",6个月实际收益率的短期偏离度，在子行业内寻找动量反转或均值回归的超额机会。
+"ts_decay_linear(group_neutralize(rank(fnd6_fatc * fnd6_newa2v1300_spceeps / (mdl77_liquidityriskfactor_tobinq + 0.001)), subindustry), 10)",利用固定资产周转率和特殊项EPS衡量经营效率，并对托宾Q值进行估值去偏。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_pricemomentumfactor_cvpre90dp * abnormal_return_earnings_release), subindustry), 5)",动量变异系数与盈余激增信号的非线性组合，捕捉子行业内部由财报驱动的波动率溢价。
+"ts_decay_linear(group_neutralize(rank(fn_comprehensive_income_net_of_tax_a / (fnd6_txs + fnd6_ivaco + 0.001)), subindustry), 12)",纯财务结构的Alpha，通过税务和库存变动对综合净收益进行质量校准，去除规模相关的盈利虚增。
+"ts_decay_linear(group_neutralize(rank(mdl77_historicalgrowthfactor_slope4qsales3y) - rank(fn_entity_common_stock_shares_out_q * fnd6_optprcby), subindustry), 10)",利用销售增长斜率因子，通过减去股本与期权价格乘积的秩来对冲市值规模效应，最后进行子行业中性化。
+"ts_decay_linear(group_neutralize(rank(mdl177_valueanalystmodel_qva_earnval_alt / (rank(liabilities_curr) + 0.001)), subindustry), 12)",分析师价值模型因子，通过当前负债规模进行标准化处理，剔除大市值杠杆偏差，实现去市值化 Alpha。
+"ts_decay_linear(group_neutralize(rank(mdl77_2garpanalystmodel_qgp_wratingchg) - rank(fnd6_rank), subindustry), 5)",结合 GARP 模型与分析师评级变更，通过减去综合基本面排名（fnd6_rank）来剥离头部市值公司的 Beta 贡献。
+"ts_decay_linear(group_neutralize(rank(ttm_sales_to_enterprise_value / (rank(fn_entity_common_stock_shares_out_q) + 0.001)), subindustry), 10)",销售额与企业价值比率因子，利用总发行股本作为市值代理变量进行除法去噪，提取纯净估值信号。
+"ts_decay_linear(group_neutralize(rank(mdl77_ooearningsmomemtummodel_fc_numrevy1) - rank(fnd6_newqv1300_spceepsp12), subindustry), 8)",盈利动量预测因子减去预期 EPS 的排名，旨在消除由市值驱动的分析师覆盖偏差。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_globaldevnorthamerica_v502_cfroi / (rank(fnd6_newqv1300_mibtq) + 0.001)), subindustry), 10)",现金流投资回报率（CFROI）因子，通过税前少数股东权益进行规模修正，剥离超大型企业的规模红利。
+"ts_decay_linear(group_neutralize(rank(relative_valuation_rank_derivative) - rank(fnd6_newqv1300_ivltq), subindustry), 15)",相对估值排名的导数信号，通过减去长期负债排名来抵消因市值庞大导致的估值钝化。
+"ts_decay_linear(group_neutralize(rank(mdl77_400_fcus / (rank(fnd2_q_flintasamt1expyfour) + 0.001)), subindustry), 10)",FCUS 专用模型因子，利用资产端财务变量作为市值调节因子进行缩放，获得去市值后的纯净模型残差。
+"ts_decay_linear(group_neutralize(rank(mdl77_2fc_stdevfy1epsp) - rank(fnd6_newa1v1300_ano), subindustry), 7)",EPS 预测的标准差（波动率因子），减去分析师覆盖人数（ano）相关的规模影响，捕捉非市值相关的盈余不确定性。
+"ts_decay_linear(group_neutralize(rank(mdl177_historicalgrowthfactor_salegstdev / (rank(fnd6_newqv1300_mibnq) + 0.001)), subindustry), 10)",销售增长波动的历史因子，通过非控制权益进行规模调整，中性化处理后保留纯粹的增长质量Alpha。
+"ts_decay_linear(group_neutralize(rank(mdl77_historicalgrowthfactor_slope4qsales3y * Relative_valuation_rank_derivative) - rank(fn_entity_common_stock_shares_out_q), subindustry), 10)",复合销售增长斜率与估值导数，通过直接减去股本秩，在复杂逻辑组合中强制剥离市值Beta。
+"ts_decay_linear(group_neutralize(rank(mdl177_valueanalystmodel_qva_earnval_alt) - rank(fnd6_rank + liabilities_curr), subindustry), 12)",综合价值模型信号，通过联合基本面排名与负债总额构建规模防御因子，实现深度的去市值化。
+"ts_decay_linear(group_neutralize(rank(mdl77_2garpanalystmodel_qgp_wratingchg / (rank(fnd6_newqv1300_spceepsp12) + 0.001)), subindustry), 9)",评级调整后的 GARP 模型，利用预测 EPS 的秩作为规模过滤，强化小盘及中盘成长股的超额收益。
+"ts_decay_linear(group_neutralize(rank(ttm_sales_to_enterprise_value) - rank(mdl177_historicalgrowthfactor_salegstdev), subindustry), 11)",利用估值因子减去增长波动率因子的秩，间接通过因子间的相互抵消实现对市值相关波动性的对冲。
+"ts_decay_linear(group_neutralize(rank(mdl77_ooearningsmomemtummodel_fc_numrevy1 / (rank(fnd2_q_flintasamt1expyfour) + 0.001)), subindustry), 8)",盈利动量因子对资产规模因子的回归残差模拟，通过比率方式剔除市值对预测修正数量的放大作用。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_globaldevnorthamerica_v502_cfroi - mdl77_2fc_stdevfy1epsp), subindustry), 10)",现金流回报减去分析师预测标准差，通过两个异质因子的差值抵消共有的市值敞口，提取质量溢价。
+"ts_decay_linear(group_neutralize(rank(mdl77_400_fcus) - rank(fnd6_newqv1300_ivltq * fnd6_optprcby), subindustry), 13)",基于 FCUS 模型的逻辑，通过剔除受市值影响严重的长期投资与资产价格乘积，保留去市值化的核心动力。
+"ts_decay_linear(group_neutralize(rank(relative_valuation_rank_derivative / (rank(fnd6_newqv1300_mibtq) + 0.001)), subindustry), 6)",估值变动率因子，通过少数股东溢价规模进行去市值化，识别子行业内部被低估的纯净信号。
+"ts_decay_linear(group_neutralize(rank(mdl77_historicalgrowthfactor_slope4qsales3y) - rank(liabilities_curr + fn_entity_common_stock_shares_out_q), subindustry), 14)",销售增长因子与规模代理变量（负债+股本）的秩剥离，旨在消除大市值公司增长陷阱对 Alpha 的干扰。
+"ts_decay_linear(group_neutralize(rank(mdl177_valueanalystmodel_qva_earnval_alt * mdl77_ooearningsmomemtummodel_fc_numrevy1) / (rank(fnd6_rank) + 0.001), subindustry), 10)",高阶价值动量复合因子，通过总排名因子的秩进行去市值标准化，确保在 TOP3000 中具有风格一致性。
+"group_neutralize(ts_decay_linear(-rank(rp_css_legal / (rp_nip_legal + 0.001)), 10), subindustry)",法律情绪得分与影响力预测的比值反转，捕捉过度定价的法律风险残差。
+"group_neutralize(ts_decay_linear(-ts_zscore(rp_css_partner + rp_ess_partner, 20), 12), subindustry)",合伙伙伴相关情绪得分累加的20日Z-score反转，剥离长期合作关系情绪动量。
+"group_neutralize(ts_decay_linear(-rank(news_mins_4_pct_up / (news_atr14 + 0.001)), 15), subindustry)",极高涨幅新闻频率与波动率的比值反转，寻找由情绪激发的过热特质点。
+"group_neutralize(ts_decay_linear(-ts_rank(rp_ess_credit_ratings - returns_5, 10), 8), subindustry)",信用评级事件情绪减去5日收益率后的残差反转，剔除价格已反映的部分。
+"group_neutralize(ts_decay_linear(-rank(rp_css_assets * news_eod_high), 10), subindustry)",资产情绪与收盘高位新闻强度乘积的反转，捕捉尾盘情绪诱导的日内过度反应。
+"group_neutralize(ts_decay_linear(-ts_zscore(news_mins_1_pct_up / (news_mins_4_pct_up + 0.001), 20), 5), subindustry)",一般上涨新闻与极端上涨新闻比值的时序反转，识别情绪分布异常。
+"group_neutralize(ts_decay_linear(-rank(rp_css_legal + rp_css_assets), 15), subindustry)",法律与资产双重情绪因子的加总反转，寻找被市场忽视的特质化回归机会。
+"group_neutralize(ts_decay_linear(-rank(delta(rp_css_partner, 5)), 10), subindustry)",伙伴情绪5日变化的短期脉冲反转，针对消息流冲击后的均值回归。
+"group_neutralize(ts_decay_linear(-ts_rank(news_eod_high / (news_atr14 + 0.001), 20), 12), subindustry)",单位波动率下的收盘新闻压力反转，通过ATR剥离市场波动基准。
+"group_neutralize(ts_decay_linear(-rank(rp_nip_legal * rp_css_legal), 10), subindustry)",法律影响深度与情绪强度的交互项反转，锁定高影响力负面情绪的过激反应。
+"group_neutralize(ts_decay_linear(-ts_zscore(rp_ess_credit_ratings / (rp_css_assets + 0.001), 20), 10), subindustry)",评级情绪相对资产基准情绪的偏差反转，剥离宏观资产情绪后的信用残差。
+"group_neutralize(ts_decay_linear(-rank(news_mins_4_pct_up - news_mins_1_pct_up), 15), subindustry)",特大涨幅新闻频率超越普通涨幅新闻的差值反转，捕捉极端多头衰竭。
+"group_neutralize(ts_decay_linear(-ts_rank(rp_css_partner / (news_eod_high + 0.001), 10), 8), subindustry)",合伙关系情绪与收盘压力比值的短期回归，排除日内趋势后的清洁情绪信号。
+"group_neutralize(ts_decay_linear(-rank(rp_css_assets - ts_mean(rp_css_assets, 20)), 12), subindustry)",资产情绪对其20日均线的偏离度反转，典型的特质性情绪超买点识别。
+"group_neutralize(ts_decay_linear(-ts_zscore(news_atr14 * rp_css_legal, 15), 10), subindustry)",法律情绪与资讯波动的加权指标反转，剥离波动性溢价后的情绪残差。
+"group_neutralize(ts_decay_linear(-rank(rp_ess_partner + rp_ess_credit_ratings), 10), subindustry)",合作伙伴与信用评级事件情绪的综合反转，利用非公开经营性负荷做特质回归。
+"group_neutralize(ts_decay_linear(-ts_rank(news_mins_1_pct_up * rp_nip_legal, 20), 12), subindustry)",普涨型新闻反应与法律预估影响力的交互反转，识别由于法律噪音导致的错杀。
+"group_neutralize(ts_decay_linear(-rank(delta(news_eod_high, 3) / (news_atr14 + 0.001)), 10), subindustry)",收盘高位新闻强度的3日变化率反转，捕捉情绪动能衰减的拐点。
+"group_neutralize(ts_decay_linear(-ts_zscore(rp_css_assets / (rp_css_legal + 0.001), 10), 10), subindustry)",资产与法律情绪比值的波动区间反转，利用内部情绪背离进行特质中性化交易。
+"group_neutralize(ts_decay_linear(-rank(news_mins_4_pct_up * rp_ess_partner), 15), subindustry)",特大收益率分布与合作伙伴情绪强度的共同反转，剥离由伙伴新闻带动的非理性跳空。
+"ts_decay_linear(group_neutralize(-rank(rp_css_inverstor), subindustry), 10)",投资者新闻情绪指标反转，捕捉情绪过度乐观后的特质性均值回归。
+"ts_decay_linear(group_neutralize(-rank(delta(rp_css_credit, 5)), subindustry), 10)",信贷情绪近期变化量的反转，剥离行业共有风险后寻找信贷情绪过度反应的标的。
+"ts_decay_linear(group_neutralize(-rank(news_mins_7_5_chg / (news_mov_vol + 0.001)), subindustry), 15)",经由新闻交易量调整后的日内大幅波动反转，剔除成交量虚假繁荣后的情绪透支。
+"ts_decay_linear(group_neutralize(-rank(news_eod_high - ts_mean(news_eod_high, 20)), subindustry), 12)",收盘高价新闻频率相对于长周期的偏离度反转，寻找异常高位后的回撤机会。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_mna * news_pe_ratio), subindustry), 7)",高估值背景下的并购新闻情绪反转，博弈估值偏高标的名义利好兑现后的回落。
+"ts_decay_linear(group_neutralize(-rank(ts_std_dev(rp_ess_legal, 10)), subindustry), 10)",法律相关新闻情绪波动率的反转，利用法律诉讼不确定性增加时的短期超卖反弹。
+"ts_decay_linear(group_neutralize(-rank(news_mins_2_pct_dn / (news_dividend_yield + 0.001)), subindustry), 8)",高股息率背景下日内急跌新闻的反转，寻找防御性品种在情绪性抛售后的修复。
+"ts_decay_linear(group_neutralize(-rank(correlation(rp_css_inverstor, news_mov_vol, 10)), subindustry), 6)",情绪与交易量相关性的残差反转，当情绪跟随放量达到极致后的动量衰竭。
+"ts_decay_linear(group_neutralize(-rank(news_mins_7_5_chg - ts_mean(news_mins_7_5_chg, 5)), subindustry), 11)",短期大幅变动新闻指标相对于其均值的残差反转，捕捉剥离趋势后的异常冲击。
+"ts_decay_linear(group_neutralize(-rank(rp_css_credit + rp_css_inverstor), subindustry), 14)",信贷与投资者综合情绪的联合反转，利用多维度情绪共振后的极值进行反向操作。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_mna - ts_mean(rp_nip_mna, 20)), subindustry), 10)",并购活动异常活跃度的残差反转，过滤行业并购潮背景下的单票过度投机。
+"ts_decay_linear(group_neutralize(-rank(news_pe_ratio / (news_mov_vol + 0.001)), subindustry), 9)",新闻视角下的估值倍数与波动率比值的反转，捕捉低质量情绪推动的估值扩张。
+"ts_decay_linear(group_neutralize(-rank(ts_max(news_eod_high, 5) - ts_min(news_eod_high, 5)), subindustry), 13)",极致高价新闻振幅的反转，基于波动率穷尽原则预测特质性情绪的衰减。
+"ts_decay_linear(group_neutralize(-rank(rp_ess_legal * rp_css_credit), subindustry), 10)",法律风险与信贷情绪双重压制下的反转，挖掘利空消息在 subindustry 内被过度定价后的机会。
+"ts_decay_linear(group_neutralize(-rank(delta(news_mins_2_pct_dn, 3)), subindustry), 5)",日内大幅下跌新闻频次的二阶变化率反转，捕捉恐慌盘加速释放后的短线拐点。
+"ts_decay_linear(group_neutralize(-rank(news_dividend_yield - ts_mean(news_dividend_yield, 60)), subindustry), 20)",新闻中隐含股息率偏离度的长周期反转，寻找价值回归逻辑下的特质性溢价消除。
+"ts_decay_linear(group_neutralize(-rank(ts_mean(news_mov_vol, 5) / (ts_mean(news_mov_vol, 20) + 0.001)), subindustry), 10)",新闻相关成交量短长周期强度的反转，识别由于新闻爆发导致的热度不可持续性。
+"ts_decay_linear(group_neutralize(-rank(rp_css_inverstor - ts_mean(rp_css_inverstor, 10)), subindustry), 12)",投资者情绪相对于短期基准的残差反转，剔除行业Beta后的纯特质性情绪波动。
+"ts_decay_linear(group_neutralize(-rank(news_mins_7_5_chg * rp_ess_legal), subindustry), 11)",法律负面冲击引发的剧烈价格变动反转，剥离法律事件后的情绪过度杀跌。
+"ts_decay_linear(group_neutralize(-rank(ts_arg_max(rp_css_inverstor, 20)), subindustry), 10)",投资者情绪触及近期峰值后时间距离的反转，捕捉情绪高点过后逐渐冷却的估值溢价。
+"ts_decay_linear(group_neutralize(-rank(news_ls - ts_mean(news_ls, 10)), subindustry), 10)",一般新闻情绪得分（news_ls）的10日均值回归，剥离长期情绪趋势，捕捉短期情绪过激后的反转。
+"ts_decay_linear(group_neutralize(-rank(news_mins_10_chg / (news_ls + 0.001)), subindustry), 5)",衡量单位情绪得分激发的10分钟价格变动，识别由于情绪催化导致的过度价格反应并进行反转交易。
+"ts_decay_linear(group_neutralize(-rank(rp_ess_partner * delta(news_mins_7_5_chg, 1)), subindustry), 5)",合伙人相关情绪（rp_ess_partner）与短期价格变动增量的乘积，捕捉合作伙伴利好/利空引发的特质性脉冲反转。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_product / (news_spy_close + 0.001)), subindustry), 10)",产品类新闻情绪（rp_nip_product）相对于市场大盘波动（news_spy_close）的偏离度，寻找剥离大盘后的产品特质性反转。
+"ts_decay_linear(group_neutralize(-rank(news_ls / (news_pe_ratio + 0.001)), subindustry), 5)",利用市盈率（news_pe_ratio）对情绪得分进行估值修正，高估值股票对同等情绪得分的敏感度通常更高，容易产生回撤。
+"ts_decay_linear(group_neutralize(-rank(rp_css_dividends - ts_mean(rp_css_dividends, 20)), subindustry), 10)",股息相关新闻（rp_css_dividends）的情绪残差，剔除季节性分红预期后的非预期情绪波动反转。
+"ts_decay_linear(group_neutralize(-rank((news_pre_vwap / (news_prev_close + 0.001)) * news_ls), subindustry), 5)",新闻发布前相对于前收盘价的偏离与情绪分数的结合，捕捉由于盘前预期过度计价而导致的新闻落地反转。
+"ts_decay_linear(group_neutralize(-rank(ts_stddev(news_ls, 10) * news_mins_10_chg), subindustry), 5)",结合情绪波动率与瞬时价格变动，捕捉在高情绪不确定性下的价格超速反转。
+"ts_decay_linear(group_neutralize(-rank(news_ls / (ts_stddev(news_mins_10_chg, 20) + 0.001)), subindustry), 10)",用价格波动的标准差归一化情绪分数，寻找那些情绪剧烈变动但未被对应波动率覆盖的异常点。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_product + rp_ess_partner - ts_mean(news_ls, 5)), subindustry), 5)",结合产品及合伙人双重情绪维度并减去综合情绪基准，挖掘多维度信息共振后的特质性反转机会。
+"ts_decay_linear(group_neutralize(-rank(delta(news_ls, 2) / (news_pe_ratio + 0.001)), subindustry), 10)",情绪得分的二日变动量经过估值因子缩放，捕捉情绪快速转折触发的动量衰竭。
+"ts_decay_linear(group_neutralize(-rank(news_mins_7_5_chg - ts_mean(news_mins_7_5_chg, 10)), subindustry), 5)",纯粹的价格变动残差反转，剔除近期的平均变动水平，聚焦于短期非理性冲动。
+"ts_decay_linear(group_neutralize(-rank(news_ls * (news_spy_close / (news_pre_vwap + 0.001))), subindustry), 10)",情绪得分与大盘相对于盘前均价走势的交互项，识别受大盘情绪裹挟而产生的个股超跌或超涨。
+"ts_decay_linear(group_neutralize(-rank(rp_css_dividends / (rp_nip_product + 0.001)), subindustry), 5)",红利类情绪与产品类情绪的相对比例，捕捉不同类型新闻消息对股价驱动力的差异性反转。
+"ts_decay_linear(group_neutralize(-rank(ts_rank(news_ls, 20) - ts_rank(news_mins_10_chg, 20)), subindustry), 10)",情绪排名与价格变动排名的离散度；当情绪排名远高于价动排名时，预示着基本面支撑不足的反转。
+"ts_decay_linear(group_neutralize(-rank(news_ls * log(news_pe_ratio + 1.001)), subindustry), 5)",利用PE的对数形式强化对高成长/高估值股票新闻敏感度的捕捉，并进行反向头寸构建。
+"ts_decay_linear(group_neutralize(-rank(delta(rp_ess_partner, 5) / (news_prev_close + 0.001)), subindustry), 10)",合作伙伴情绪的5日变化量经过价位归一化，寻找中线情绪反转点的早期信号。
+"ts_decay_linear(group_neutralize(-rank(news_ls / (ts_mean(news_mins_7_5_chg, 5) + 0.001)), subindustry), 5)",情绪强度相对于近期平均波动幅度的比率，识别情绪溢出导致的价格不可持续性。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_product * abs(news_mins_10_chg)), subindustry), 10)",产品新闻情绪与波动绝对值的乘积，量化“利好出尽”或“利空出尽”后的波动率收缩反转。
+"ts_decay_linear(group_neutralize(-rank(news_ls - ts_stddev(news_ls, 60)), subindustry), 5)",将当期情绪得分减去其长期波动标准差，旨在剔除情绪噪音，捕捉显著的极端情绪反转。
+"ts_decay_linear(group_neutralize((implied_volatility_call_270 - implied_volatility_mean_30) / (implied_volatility_mean_30 + 0.001), subindustry), 10)",长期看涨期权隐含波动率与短期均值的背离，衡量长期看涨情绪的异常扩张。
+"ts_decay_linear(group_neutralize((forward_price_720 - call_breakeven_270) / (call_breakeven_270 + 0.001), subindustry), 12)",远期价格相对于长期看涨盈亏平衡点的隐含空间，评估远期溢价。
+"ts_decay_linear(group_neutralize((implied_volatility_mean_30 - historical_volatility_20) / (historical_volatility_20 + 0.001), subindustry), 5)",波动率风险溢价（VRP）：衡量未来30天隐含波动率相对于近20天历史波动率的溢价水平。
+"ts_decay_linear(group_neutralize(rank(call_breakeven_270 / (call_breakeven_180 + 0.001)), subindustry), 10)",看涨期权盈亏平衡点的期限结构斜率，反映市场对远端股价上行压力的预期。
+"ts_decay_linear(group_neutralize(pcr_vol_30 / (implied_volatility_mean_30 + 0.001), subindustry), 15)",成交量项下的看跌看涨比（PCR）经波动率调节后的信号，捕捉情绪过热后的反转。
+"ts_decay_linear(group_neutralize(parkinson_volatility_10 / (historical_volatility_20 + 0.001), subindustry), 8)",帕金森波动率与标准历史波动率的比值，衡量日内价格发现效率对动量的确认。
+"ts_decay_linear(group_neutralize((implied_volatility_call_270 - historical_volatility_90) / (historical_volatility_90 + 0.001), subindustry), 10)",长期隐含波动率与长期实现波动率的偏差，识别中长期趋势的波动增强信号。
+"ts_decay_linear(group_neutralize(ts_delta(forward_price_720, 5) / (forward_price_720 + 0.001), subindustry), 10)",720日远期价格的短期变动率，利用衍生品市场的远端定价进行趋势跟踪。
+"ts_decay_linear(group_neutralize(put_breakeven_10 / (call_breakeven_180 + 0.001), subindustry), 12)",极短端看跌防线与长端看涨目标的相对位置，衡量期权市场的偏度支撑。
+"ts_decay_linear(group_neutralize(historical_volatility_20 / (historical_volatility_90 + 0.001), subindustry), 10)",波动率期限结构的动量，短期波动率相对于长期波动率的加速，常预示趋势启动。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_30) - rank(parkinson_volatility_10), subindustry), 10)",隐含波动率排名与日内高低价波动率排名的差值，捕捉市场预期与实际价格震荡的失衡。
+"ts_decay_linear(group_neutralize(log(forward_price_720 / (put_breakeven_10 + 0.001)), subindustry), 20)",对数空间下的远期价格相对于下方保护位的距离，评估个股的下行风险敞口。
+"ts_decay_linear(group_neutralize(ts_rank(pcr_vol_30, 20), subindustry), 5)",20日内PCR成交量比率的分位数排名，识别过度悲观后的买入机会。
+"ts_decay_linear(group_neutralize(implied_volatility_call_270 / (historical_volatility_20 + 0.001), subindustry), 10)",反映市场对未来九个月上行异常波动的定价是否高于最近一个月的实际水平。
+"ts_decay_linear(group_neutralize((call_breakeven_180 - put_breakeven_10) / (forward_price_720 + 0.001), subindustry), 15)",期权市场界定的预期波动区间宽度相对于远期价格的占比，识别低波动资产。
+"ts_decay_linear(group_neutralize(ts_delta(implied_volatility_mean_30, 10) / (implied_volatility_mean_30 + 0.001), subindustry), 10)",隐含波动率的10日变化率，作为价格动量是否得到波动率确认的先行指标。
+"ts_decay_linear(group_neutralize(historical_volatility_90 / (implied_volatility_call_270 + 0.001), subindustry), 10)",实现波动率对期权溢价的反向定价，识别隐含波动率被低估的套利机会。
+"ts_decay_linear(group_neutralize(abs(forward_price_720 - call_breakeven_270) / (forward_price_720 + 0.001), subindustry), 10)",远期价格与长期看涨目标位的贴近程度，衡量趋势的延续性。
+"ts_decay_linear(group_neutralize((historical_volatility_20 - parkinson_volatility_10) / (parkinson_volatility_10 + 0.001), subindustry), 7)",收盘波动率与日内波动率之差，捕捉非交易时段信息冲击引发的趋势动量。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_30) + rank(historical_volatility_90), subindustry), 10)",多维度波动率综合排名，通过行业中性化筛选出具有潜在高波动特征的个股。
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_medianepsbfam, 5)) * rank(ebitda / (debt_lt + 0.001)), subindustry), 10)",中值预期EPS增长与低杠杆财务质量（EBITDA/债务）的正交组合
+"ts_decay_linear(group_neutralize(rank(anl4_ptp_high / (fn_assets_fair_val_l1_a + 0.001)) - rank(est_netdebt / (ebitda + 0.001)), subindustry), 7)",最高目标价相对于公允价值的溢价，并扣除预期净债务风险
+"ts_decay_linear(group_neutralize(rank(ts_delta(max_adjusted_funds_from_operations_guidance_2, 10)) * rank(fnd6_niadj / (fnd6_newqv1300_spcepd12 + 0.001)), subindustry), 12)",AFFO指引上调且净利润对资本开支覆盖率高的个股
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_netprofita_low, 5)) / (rank(fnd2_a_ptoacqbnsesg + 0.001) + 0.001), subindustry), 8)",分析师净利润底部预期的改善，结合较低的收购相关费用干扰
+"ts_decay_linear(group_neutralize(rank(anl4_qfv4_cfps_low) * rank(fnd6_mrc5 / (fn_income_taxes_paid_a + 0.001)), subindustry), 15)",现金流预期稳健且具有高纳税效率/盈利质量的股票
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_tbve_ft, 20)) - rank(min_stock_option_expense_guidance_2 / (fnd6_niadj + 0.001)), subindustry), 10)",账面价值预期增长，同时期权开支对利润的潜在稀释较低
+"ts_decay_linear(group_neutralize(rank(anl4_qfd1_az_hgih_spe) * rank(fnd6_newqv1300_cimiiq / (ebitda + 0.001)), subindustry), 5)",高一致性分析师预期结合现金流密集的财务质量指标
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_medianepsbfam, 3)) / (rank(fnd2_a_unrgtxbnfitxpenlintacd + 0.001) + 0.001), subindustry), 10)",EPS预期短期上调且未确认税务负债风险较小的标的
+"ts_decay_linear(group_neutralize(rank(anl4_ptp_high / (net_debt_reported_value + 0.001)) * rank(fnd6_niadj / (fnd6_mrc5 + 0.001)), subindustry), 10)",高预期回报潜力与高质量净利润结构的交集
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_qfv4_cfps_low, 10)) * rank(ebitda / (fnd6_newqv1300_spcepd12 + 0.001)), subindustry), 9)",每股现金流预期下限的上调与强劲经营现金流覆盖
+"ts_decay_linear(group_neutralize(rank(anl4_medianepsbfam / (est_netdebt + 0.001)) + rank(fnd6_niadj / (debt_lt + 0.001)), subindustry), 11)",分析师预期的EPS与负债比率，以及实际财务杠杆质量的双重筛选
+"ts_decay_linear(group_neutralize(rank(ts_delta(max_adjusted_funds_from_operations_guidance_2, 5)) * rank(fn_income_taxes_paid_a / (ebitda + 0.001)), subindustry), 6)",AFFO指引乐观且实际税收支付反映盈利真实的个股
+"ts_decay_linear(group_neutralize(rank(anl4_netprofita_low / (fn_assets_fair_val_l1_a + 0.001)) * rank(fnd6_newqv1300_cimiiq / (fnd6_niadj + 0.001)), subindustry), 10)",保守预期净利润对资产占比高，且核心收益现金流含量高
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_ptp_high, 10)) / (rank(min_stock_option_expense_guidance_2 + 0.001) + 0.001), subindustry), 8)",目标价上调且受股权管理开支稀释影响预期较小的个股
+"ts_decay_linear(group_neutralize(rank(anl4_tbve_ft / (est_netdebt + 0.001)) * rank(fnd6_mrc5 / (debt_lt + 0.001)), subindustry), 10)",预期账面价值对负债的覆盖度和盈利能力对总债务的覆盖度
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_qfd1_az_hgih_spe, 5)) * rank(fnd6_niadj / (fn_assets_fair_val_l1_a + 0.001)), subindustry), 12)",分析师预期强度增加结合资产质量表现（净利润/公允价值资产）
+"ts_decay_linear(group_neutralize(rank(anl4_medianepsbfam) - rank(fnd2_a_unrgtxbnfitxpenlintacd / (ebitda + 0.001)), subindustry), 7)",寻找预期高收益但排除了潜在税务合规风险（未确认税务利益）的个股
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_netprofita_low, 20)) * rank(ebitda / (net_debt_reported_value + 0.001)), subindustry), 14)",长期盈利预期底部的抬升与即期债务偿还能力的结合
+"ts_decay_linear(group_neutralize(rank(max_adjusted_funds_from_operations_guidance_2 / (fnd6_niadj + 0.001)) * rank(fnd6_newqv1300_cimiiq), subindustry), 10)",AFFO指引强度与财务报表中的现金流质量指标正交
+"ts_decay_linear(group_neutralize(rank(ts_delta(anl4_qfv4_cfps_low, 5)) - rank(fnd2_a_ptoacqbnsesg / (fn_income_taxes_paid_a + 0.001)), subindustry), 9)",保守现金流预期的改善并剔除重组/合并等非经常性科目干扰
+"group_neutralize(ts_decay_linear(-(rp_ess_legal / (news_vol_stddev + 0.001)), 10), subindustry)",法律情绪极端值在波动率放大时的过度反应反转，剔除行业法律共性。
+"group_neutralize(ts_decay_linear(-(rp_nip_revenue / (news_session_range + 0.001)), 5), subindustry)",营收情绪在日内价格震荡区间下的特质性修正，捕捉营收预期的短期虚假突破。
+"group_neutralize(ts_decay_linear(-((news_pct_30min - news_indx_perf) / (news_vol_stddev + 0.001)), 8), subindustry)",剔除大盘基准收益后的30分钟新闻冲击残差反转，针对短期情绪脉冲过度反应。
+"group_neutralize(ts_decay_linear(-(rp_css_credit * news_short_interest), 12), subindustry)",信用情绪与卖空利息共振引发的挤压效应，在信用改善/恶化后的残差回归。
+"group_neutralize(ts_decay_linear(-((close - news_main_vwap) / (news_main_vwap + 0.001)), 6), subindustry)",价格相对新闻基准均价的偏离度回归，通常用于新闻发布后的流动性反扑。
+"group_neutralize(ts_decay_linear(-(news_eps_actual / (news_vol_stddev + 0.001)), 15), subindustry)",EPS落实现实后的新闻热度退散，利用标准化后的业绩情绪进行特质性反转。
+"group_neutralize(ts_decay_linear(-(rp_nip_revenue - news_eps_actual), 10), subindustry)",营收情绪与实际EPS披露之间的认知偏差修正，剥离业绩基本面后的纯情绪回撤。
+"group_neutralize(ts_decay_linear(-(news_session_range / (news_vol_stddev + 0.001)) * rp_css_credit, 7), subindustry)",信用情绪在异常日内波动窗口下的反向策略，捕捉信用风险被过度定价后的反转。
+"group_neutralize(ts_decay_linear(-(news_short_interest / (news_vol_stddev + 0.001)) * news_pct_30min, 10), subindustry)",利用空头利息权重对短期新闻收益进行残差化处理，挖掘机构博弈引发的过激反转。
+"group_neutralize(ts_decay_linear(-(rp_ess_legal + rp_css_credit), 12), subindustry)",法律与信用负面舆情叠加后的流动性枯竭反弹，双重情绪维度的特质回归。
+"group_neutralize(ts_decay_linear(-(news_main_vwap / (close + 0.001)), 5), subindustry)",新闻权重的成交均价与收盘价的背离，反映了新闻时段主要流动性提供者的反向意愿。
+"group_neutralize(ts_decay_linear(-(news_vol_stddev * ts_delta(rp_nip_revenue, 1)), 8), subindustry)",营收情绪动态变化的加速度反转，利用情绪波动率作为权重放大特质剥离效果。
+"group_neutralize(ts_decay_linear(-(news_indx_perf / (news_pct_30min + 0.001)), 5), subindustry)",新闻敏感度与大盘表现的错位反转，寻找不随大流的特质性新闻驱动逻辑。
+"group_neutralize(ts_decay_linear(-(news_eps_actual * news_short_interest), 20), subindustry)",高空头环境下业绩情绪的剧烈反转，捕捉轧空或业绩预期落空后的残差调整。
+"group_neutralize(ts_decay_linear(-(rp_ess_legal / (news_session_range + 0.001)), 10), subindustry)",法律诉讼预期在宽振幅日内的非理性杀跌回归，基于行业中性化的法律情绪剥离。
+"group_neutralize(ts_decay_linear(-rank(news_vol_stddev) * rp_nip_revenue, 9), subindustry)",高波动率背景下的营收情绪失效反转，利用情绪不确定性对营收预测进行惩罚项回归。
+"group_neutralize(ts_decay_linear(-(news_session_range - news_vol_stddev), 5), subindustry)",剥离常规波动后的纯新闻性振幅回归，反映了新闻驱动的非系统性波动消散。
+"group_neutralize(ts_decay_linear(-(rp_css_credit / (news_main_vwap + 0.001)), 14), subindustry)",信用情绪相对于新闻成交价的敏感度分析，寻找长期信用溢价后的阶段性反向点。
+"group_neutralize(ts_decay_linear(-(news_pct_30min * news_eps_actual), 7), subindustry)",30分钟超速收益与EPS增长情绪的错配反转，剥离短期动量后的特质性修复。
+"group_neutralize(ts_decay_linear(-(rp_ess_legal * rp_nip_revenue / (news_short_interest + 0.001)), 11), subindustry)",多重负向情绪（法律+营收）在空头平仓压力下的反差表现，捕捉多空失衡后的残差回归。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_valueanalystmodel_qva_finstmt) - rank(cap), subindustry), 10)",基于分析师价值模型的去市值化纯净因子，提取剔除规模Beta后的超额估值信号。
+"ts_decay_linear(group_neutralize(rank(inventory_change_avg_assets) / (rank(fnd6_cptnewqv1300_actq) + 0.001) - rank(cap), subindustry), 12)",库存变动占流动资产比率的去市值化修正，挖掘供应链效率层面的Alpha。
+"ts_decay_linear(group_neutralize(rank(mdl77_oearningmomentumfactor_numrevy1) * rank(fnd6_mfmq_ibcomq) - rank(cap), subindustry), 8)",营收预测动能与净利润规模的交互因子，通过去市值化锁定成长动能的核心溢价。
+"ts_decay_linear(group_neutralize(rank(mdl177_fangma_gpam_usa_fangma_gpam1) / (rank(fnd6_newqv1300_spcep12) + 0.001) - rank(cap), subindustry), 15)",总资产盈利能力（GPAM）与市销率比值的去市值组合，寻找高毛利且低估值的纯净信号。
+"ts_decay_linear(group_neutralize(rank(mdl177_historicalgrowthfactor_chgocfp_alt) - rank(fnd6_txw) - rank(cap), subindustry), 5)",经营现金流历史增长率剔除预扣税项影响后的去市值信号，捕捉真实的内生性增长。
+"ts_decay_linear(group_neutralize(rank(mdl77_2pricemomemtummodel_voldiff_pc) / (rank(fnd6_optca) + 0.001) - rank(cap), subindustry), 20)",价格动能成交量差异与经营活动调整项的组合，去市值化后识别流动性驱动的非理性偏离。
+"ts_decay_linear(group_neutralize(rank(mdl177_pricemomentumfactor_actrtn12m_alt) - rank(fnd6_newqv1300_prcepsq) - rank(cap), subindustry), 10)",12个月价格动能相对于市盈率的残差信号，在中性化市值后寻找趋势延续的确定性。
+"ts_decay_linear(group_neutralize(rank(mdl77_ohistoricalgrowthfactor_pfcoy3ghc) * rank(fnd6_txdc) - rank(cap), subindustry), 12)",历史资本性支出增长与递延所得税的交互因子，去市值化剥离税务杠杆带来的Beta。
+"ts_decay_linear(group_neutralize(rank(mdl77_2gdna_curindfcfp_) / (rank(fn_comp_non_opt_forfeited_q) + 0.001) - rank(cap), subindustry), 6)",折旧摊销后的净自由现金流与非经营性损失比值，通过市值中性化捕捉企业财务稳健性Alpha。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_sensitivityfactor400_chg12msip) - rank(fnd6_newa2v1300_tstk) - rank(cap), subindustry), 10)",12个月价格敏感度因子结合库存股票变化，去市值化识别大股东潜在行为背后的Alpha信号。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_valueanalystmodel_qva_finstmt) + rank(mdl77_oearningmomentumfactor_numrevy1) - 2 * rank(cap), subindustry), 15)",估值模型与预测动能的双重去市值叠加，在小市值效应之外寻找高阶量化均衡点。
+"ts_decay_linear(group_neutralize(rank(inventory_change_avg_assets) * rank(fnd6_cptnewqv1300_dpq) - rank(cap), subindustry), 9)",库存效率与折旧政策的协同信号，市值中性化后反映重资产行业的盈利质量改善。
+"ts_decay_linear(group_neutralize(rank(mdl177_historicalgrowthfactor_chgocfp_alt) / (rank(fnd6_newa2v1300_tstk) + 0.001) - rank(cap), subindustry), 7)",经营现金流增长对库存股回购的敏感度，去市值化后捕捉公司管理层对现金分配的信心。
+"ts_decay_linear(group_neutralize(rank(mdl177_fangma_gpam_usa_fangma_gpam1) - rank(fnd6_cptnewqv1300_actq) / (rank(cap) + 0.001), subindustry), 10)",利用单位市值流动资产对GPAM模型进行修正，剥离因资产规模带来的估值幻觉。
+"ts_decay_linear(group_neutralize(rank(mdl177_pricemomentumfactor_actrtn12m_alt) * rank(fnd6_txw) - rank(cap), subindustry), 11)",动能因子与税收支出交叉验证形成的Alpha，去市值化以排查税务成本对动能持续性的反向抑制。
+"ts_decay_linear(group_neutralize(rank(mdl77_2gdna_curindfcfp_) - rank(fnd6_newqv1300_prcepsq) - rank(cap), subindustry), 14)",自由现金流回报率相对于市盈率的去市值偏离度，挖掘现金收益高于盈利预期的标的。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_sensitivityfactor400_chg12msip) / (rank(fnd6_optca) + 0.001) - rank(cap), subindustry), 8)",市场敏感度与经营性资产调整项的去市值化剥离，锁定市场反应过度的纯净获利机会。
+"ts_decay_linear(group_neutralize(rank(mdl77_ohistoricalgrowthfactor_pfcoy3ghc) - rank(fnd6_mfmq_ibcomq) / (rank(cap) + 0.001), subindustry), 13)",基于市值权重的归母净利对历史增长因子的去市值化压制实验，提取跨周期增长Alpha。
+"ts_decay_linear(group_neutralize(rank(mdl77_2pricemomemtummodel_voldiff_pc) + rank(fn_comp_non_opt_forfeited_q) - rank(cap), subindustry), 10)",价量动能差异结合非经常性损益项目的去市值模型，识别垃圾股反弹噪音外的真实趋势。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_valueanalystmodel_qva_finstmt) / (rank(fnd6_cptnewqv1300_dpq) + 0.001) - rank(cap), subindustry), 18)",价值模型对折旧成本比率的去市值化再平衡，在中性化行业规模后定位被低估的硬资产公司。
+"ts_decay_linear(group_neutralize(mdl77_mpnghc / (fnd6_newqv1300_capsq + 0.001), subindustry), 10)",利用市值平方项作为缩放因子，对mpnghc模型进行市值平减，并通过子行业中性化消除行业暴露。
+"ts_decay_linear(group_neutralize(mdl77_ovalueanalystmodel_qva_balsht - rank(liabilities / (fnd6_newqv1300_capsq + 0.001)), subindustry), 5)",通过资产负债表模型扣除杠杆市值比的排位干扰，提取去市值化的纯净价值信号。
+"ts_decay_linear(group_neutralize(mdl177_fa_fc_fwdep / (fnd6_beta + 0.001), subindustry), 12)",将远期盈利预测模型相对于市场贝塔进行风险调整，在子行业层面剥离系统性因子。
+"ts_decay_linear(group_neutralize(mdl77_htwrgspe_amq - rank(fnd6_newqv1300_reunaq), subindustry), 8)",从HTW增长模型中剔除留存收益因子的影响，通过行业中性化聚焦高增长质量Alpha。
+"ts_decay_linear(group_neutralize(mdl177_2_earningsqualityfactor_udep / (fnd6_newqv1300_lqpl1q + 0.001), subindustry), 15)",对盈利质量因子进行流动性/规模调整，利用线性衰减增强信号在不同周期的稳定性。
+"ts_decay_linear(group_neutralize(mdl177_2_pricemomentumfactor_chgalpha36m - fn_effect_of_exchange_rate_on_cash_and_equiv_q, subindustry), 20)",在价格动量因子中扣除汇率变动带来的现金流伪增长，实现去宏观噪音后的行业中性套利。
+"ts_decay_linear(group_neutralize(stddev_fy1_eps_estimates_to_price / (fnd6_newqv1300_dpactq + 0.001), subindustry), 10)",将盈利预测波动率与折旧摊销指标复合，通过剥离会计估计偏差获取纯净期望Alpha。
+"ts_decay_linear(group_neutralize(mdl177_2_earningmomentumfactor400_hlep * latin_america_sales_exposure, subindustry), 7)",将盈利动量与特定地区销售暴露度结合，在子行业内挖掘被市值信号掩盖的地域增长套利。
+"ts_decay_linear(group_neutralize(financial_statement_value_score - rank(fn_oth_comp_grants_weighted_avg_grant_date_fair_value_a), subindustry), 10)",利用报表价值分剔除员工股权激励估值压力，构建去市值化的内部激励对冲Alpha。
+"ts_decay_linear(group_neutralize(mdl77_mpnghc / (fn_comp_non_opt_forfeited_a + 0.001), subindustry), 5)",基于期权没收数据对MPNGHC模型进行非正常人力资本变动调整，强化纯净Alpha收益。
+"ts_decay_linear(group_neutralize(mdl77_ovalueanalystmodel_qva_balsht * fnd6_mrc5, subindustry), 10)",结合边际成本分量与价值模型，在子行业内部通过交叉验证剔除低效率规模因子。
+"ts_decay_linear(group_neutralize(mdl177_fa_fc_fwdep / (liabilities + 0.001), subindustry), 10)",通过负债总额平减远期财务预测模型，消除大型企业规模溢价对预测信号的干扰。
+"ts_decay_linear(group_neutralize(mdl77_htwrgspe_amq - ts_rank(fnd6_beta, 20), subindustry), 10)",扣除过去20日贝塔值的滚动排位，使得HTW模型在行业性波动中保持市值中性。
+"ts_decay_linear(group_neutralize(mdl177_2_earningsqualityfactor_udep * fn_effect_of_exchange_rate_on_cash_and_equiv_q, subindustry), 10)",将收益质量因子与现金流汇率效应结合，提取不受资本规模影响的跨国业务纯净质量信号。
+"ts_decay_linear(group_neutralize(mdl177_2_pricemomentumfactor_chgalpha36m / (fnd6_newqv1300_reunaq + 0.001), subindustry), 10)",利用留存收益作为分母平减价格动量，挖掘非资本积累驱动的超额价格增长空间。
+"ts_decay_linear(group_neutralize(stddev_fy1_eps_estimates_to_price - rank(fnd6_newqv1300_lqpl1q), subindustry), 10)",从盈利预测一致性指标中扣除财务杠杆/规模项的影子效应，通过行业中性化捕捉偏差Alpha。
+"ts_decay_linear(group_neutralize(mdl177_2_earningmomentumfactor400_hlep / (fnd6_newqv1300_dpactq + 0.001), subindustry), 10)",将盈利动量与资本密集度进行标准化处理，剥离由重资产规模带来的伪增长因子。
+"ts_decay_linear(group_neutralize(latin_america_sales_exposure * financial_statement_value_score, subindustry), 10)",基于报表价值分数对特定市场销售暴露进行加权，构建横截面去规模化的地区溢价信号。
+"ts_decay_linear(group_neutralize(mdl77_mpnghc - rank(fn_oth_comp_grants_weighted_avg_grant_date_fair_value_a), subindustry), 10)",在MPNGHC模型中扣除股权授予公平价值的相对规模排名，获取核心经营层面的纯净超额利润。
+"ts_decay_linear(group_neutralize(mdl77_ovalueanalystmodel_qva_balsht / (fnd6_beta + 0.001), subindustry), 10)",利用贝塔值对价值分析模型进行风险去偏，在子行业层面实现完全的市值与风险中性化。
+"ts_decay_linear(group_neutralize(-1 * (rank(rp_ess_business) - rank(news_mins_20_chg)), subindustry), 10)",剥离20分钟价格动量后的商业环境情绪残差反转：当商业情绪显著高于价格反应时，捕捉其过热后的预期修正。
+"ts_decay_linear(group_neutralize(-1 * (rank(rp_ess_ratings) - rank(news_mins_4_chg)), subindustry), 5)",评级情绪剥离短线动量后的特质性反转：剔除4分钟内高频动量干扰，识别机构评级变动引发的过度反应。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_price / (news_max_dn_ret + 0.001)), subindustry), 12)",价格相关新闻影响强度与最大回撤比值的反转：衡量新闻导致的价格波动性价比，针对异常波动的特质性回归。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_insider - ts_mean(rp_css_insider, 20)), subindustry), 4)",内部人情绪短期偏差反转：内部人情绪指标偏离20日均值时，通常存在过度解读，利用其进行残差回归。
+"ts_decay_linear(group_neutralize(-1 * (rank(rp_nip_earnings) * rank(news_mins_20_chg)), subindustry), 8)",盈余新闻影响与趋势极值的协同反转：当盈余情绪与价格动量同时达到峰值时，剥离共线性后的反转效应。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_labor - ts_mean(rp_css_labor, 10)), subindustry), 15)",劳工相关新闻情绪的短期振荡反转：劳工情绪属于慢变量，短期剧烈波动往往伴随流动性溢价的收回。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_mna / (rp_ess_business + 0.001)), subindustry), 10)",并购消息对商业环境情绪的残差偏离反转：过滤大背景后的并购新闻异动，捕捉并购炒作的泡沫消散。
+"ts_decay_linear(group_neutralize(-1 * (rank(news_max_dn_ret) - rank(rp_nip_price)), subindustry), 6)",新闻驱动的最大向下回撤与价格影响力的残差反转：当新闻引发的回撤远超其综合报价影响力时的过度反应修复。
+"ts_decay_linear(group_neutralize(-1 * ts_delta(rp_ess_ratings, 3), subindustry), 10)",评级情绪三日变动之动反转：针对评级调整消息的即时冲动进行剥离，寻找过度反应后的均值回归。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_insider / (rp_css_labor + 0.001)), subindustry), 7)",内部人情绪相对劳工环境的特质波动反转：剥离宏观劳动力因素后的管理层信心残差，捕捉其对自身估值的认知偏差。
+"ts_decay_linear(group_neutralize(-1 * rank(news_mins_20_chg - news_mins_4_chg), subindustry), 9)",新闻动量加速度残差反转：20分钟与4分钟动量差值代表了情绪的衰减或爆发，捕捉其非理性持续后的反抽。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_earnings - ts_mean(rp_nip_earnings, 5)), subindustry), 12)",盈余公告情绪的5日残差反转：盈余发布后的市场情绪若超出近5日均值过多，往往存在特质性溢价的回归需求。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_business * news_max_dn_ret), subindustry), 8)",商业环境情绪与下行极端收益的交互反转：在负面波动放大时，根据商业情绪残差判断跌势是否过激。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_ratings / (rp_nip_price + 0.001)), subindustry), 11)",评级情绪单位价格变动损耗反转：分析评级对价格的支撑效率，反映出被市场过度定价的评级新闻残差。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_mna - ts_mean(rp_nip_mna, 20)), subindustry), 14)",并购新闻频率与情绪的20日残差反转：长期静默后的并购新闻频发极易导致股价超涨，利用残差法做空溢价。
+"ts_decay_linear(group_neutralize(-1 * rank(rp_css_labor + rp_ess_business), subindustry), 5)",劳工与商业综合情绪的短期过热反转：双重情绪叠加下的动量往往不可持续，捕捉其行业中性化后的反向机会。
+"ts_decay_linear(group_neutralize(-1 * ts_rank(rp_nip_price, 10), subindustry), 10)",新闻价格影响力的时间序列秩反转：当新闻对价格的影响力处于10日高位时，往往预示着情绪动能耗尽。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_insider * news_mins_4_chg), subindustry), 7)",内部人情绪与超短线动量的内生性反转：利用内部人静态仓位情绪剥离极短线动量，识别特质性反转趋势。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_business / (rp_nip_earnings + 0.001)), subindustry), 13)",商业环境感应度对盈余质量的残差反转：当商业情绪脱离盈余基本面支持时，捕捉这种非稳态的回归。
+"ts_decay_linear(group_neutralize(-1 * (news_max_dn_ret / (news_mins_20_chg + 0.001)), subindustry), 9)",最大下行冲击与20分钟变动比例的残差反转：刻画极端恐慌后的韧性缺失，捕捉该指标极端分位数后的反弹逻辑。
+"group_neutralize(ts_decay_linear(-rank(rp_ess_equity * news_mins_5_chg), 10), subindustry)",股票综合情绪与5分钟情绪变化乘积的短期反转，捕捉过度反应后的均值回归。
+"group_neutralize(ts_decay_linear(-rank(rp_css_product / (news_range_stddev + 0.001)), 5), subindustry)",利用产品相关新闻情绪除以新闻波动率，剥离背景噪音后对高信噪比特质性情绪进行反转。
+"group_neutralize(ts_decay_linear(-rank(news_mins_20_chg * rp_ess_ratings), 8), subindustry)",分析师评级情绪与20分钟新闻倾向的复合因子，在评级驱动的短期冲高中寻找反转机会。
+"group_neutralize(ts_decay_linear(rank(news_mins_3_chg) - rank(news_mins_20_chg), 3), subindustry)",利用极短期（3分钟）与短中期（20分钟）情绪变化的残差，在动量衰竭点进行反向布局。
+"group_neutralize(ts_decay_linear(-rank(rp_nip_partner * news_open), 6), subindustry)",合作伙伴新闻情绪在开盘波段的过度计价反转，针对开盘情绪冲击进行多空对冲。
+"group_neutralize(ts_decay_linear(-rank(rp_css_dividends / (news_mins_20_chg + 0.001)), 12), subindustry)",股息相关情绪相对于整体情绪变化的特质表现，剔除市场情绪动量后的纯净分红预期反转。
+"group_neutralize(ts_decay_linear(-rank(ts_delta(rp_ess_equity, 5)), 5), subindustry)",股票综合情绪5日变动量的反转，通过t-5日的增量情绪变化捕捉市场情绪过热的拐点。
+"group_neutralize(ts_decay_linear(-rank(rp_ess_equity * log(news_range_stddev + 0.001)), 7), subindustry)",结合新闻波动范围的对数加权情绪因子，在高波动触发的恐慌或兴奋中执行情绪反转。
+"group_neutralize(ts_decay_linear(rank(ts_mean(rp_ess_ratings, 20)) - rank(rp_ess_ratings), 15), subindustry)",分析师评级情绪偏离长期（20日）均值的残差反转，通过剥离估值中轴实现特质性回归。
+"group_neutralize(ts_decay_linear(-rank(news_open * news_mins_5_chg), 4), subindustry)",开盘情绪与5分钟急速情绪变化的交互因子，捕捉早盘非理性波动后的价格修复。
+"group_neutralize(ts_decay_linear(-rank(rp_nip_partner / (news_range_stddev + 0.001)), 9), subindustry)",伙伴关系新闻的风险调整后情绪反转，在低波动环境下的情绪突变具有更强的反转信号。
+"group_neutralize(ts_decay_linear(-rank(rp_css_product - ts_mean(rp_css_product, 10)), 5), subindustry)",产品新闻情绪的10日去均值残差，聚焦于突发性产品利好/利空后的情绪修正。
+"group_neutralize(ts_decay_linear(-rank(news_mins_3_chg / (news_mins_20_chg + 0.001)), 3), subindustry)",超短期情绪变动率与短中期情绪背景的背离因子，识别情绪拉升中的假突破并反向操作。
+"group_neutralize(ts_decay_linear(-rank(rp_ess_equity * rp_ess_ratings), 10), subindustry)",综合情绪与评级情绪的共振反转，在多重情绪指标同时达到极端值时利用高胜率反转逻辑。
+"group_neutralize(ts_decay_linear(-rank(ts_std(news_mins_5_chg, 10) * rp_ess_equity), 6), subindustry)",情绪变动波动率加权的综合情绪反转，过滤掉缺乏成交量支撑的虚假情绪波动。
+"group_neutralize(ts_decay_linear(-rank(rp_css_dividends + rp_nip_partner), 8), subindustry)",多源特质新闻情绪（分红+伙伴）的加总反转，捕捉公司治理与业务拓展维度的情绪过热。
+"group_neutralize(ts_decay_linear(rank(ts_min(news_mins_20_chg, 5)) - rank(news_mins_20_chg), 10), subindustry)",20分钟情绪变化处于5日低位的负向反转（即情绪触底回升逻辑），寻找情绪枯竭点的转折。
+"group_neutralize(ts_decay_linear(-rank(news_open / (rp_ess_equity + 0.001)), 7), subindustry)",开盘信号相对基本面情绪的偏离度反转，利用早盘竞价产生的非对称信息差进行获利。
+"group_neutralize(ts_decay_linear(-rank(ts_delta(rp_css_product, 3) * news_range_stddev), 5), subindustry)",产品新闻情绪3日变化量乘以波动标准差，增强对高影响力且突发性新闻的情绪反转力度。
+"group_neutralize(ts_decay_linear(-rank(rp_ess_equity - ts_mean(rp_ess_equity, 5)), 5), subindustry)",5日综合情绪的时间序列残差反转，通过剥离短期情绪倾向获取纯粹的特质波动收益。
+"ts_decay_linear(group_neutralize(-rank(news_mins_20_pct_up / (news_mins_20_pct_dn + 0.001)), subindustry), 10)",新闻情绪极值反转：高频利好新闻占比过高时进行反向操作，剥离行业共有趋势。
+"ts_decay_linear(group_neutralize(rank(news_mins_2_pct_dn) - rank(news_mins_3_pct_up), subindustry), 8)",短时消息面残差：对比极短时间内多空消息的密度差，捕捉过度反应后的特质性反转。
+"ts_decay_linear(group_neutralize(-rank(rp_css_price * news_session_range_pct), subindustry), 12)",价格类新闻集中度反转：结合RavenPack价格情感得分与新闻覆盖范围，寻找定价过度后的回归机会。
+"ts_decay_linear(group_neutralize(rank(rp_css_legal / (rp_css_society + 0.001)), subindustry), 5)",社会法律风险因子：当法律负面情感相对于社会情感异常时，利用情绪溢价进行反转套利。
+"ts_decay_linear(group_neutralize(-rank(ts_delta(news_mins_10_pct_up, 3)), subindustry), 10)",消息增量衰减：过去3天利好消息覆盖率增长最快的股票倾向于短期超买，执行反向策略。
+"ts_decay_linear(group_neutralize(rank(rp_css_ratings) - rank(news_mins_20_pct_up), subindustry), 15)",分析师评级残差：剥离普通新闻热度后的分析师评级情感，寻找被大众忽视的特质反转点。
+"ts_decay_linear(group_neutralize(-rank(news_session_range_pct / (news_mins_2_pct_dn + 0.001)), subindustry), 6)",消息广度风险：当利空消息频发且全天候覆盖时，在行业内寻找被恐慌抛售后的反弹机会。
+"ts_decay_linear(group_neutralize(rank(ts_delta(rp_css_society, 5)), subindustry), 10)",社会责任感残差：社会面情感得分短期大幅波动后，由于非机构资金离场导致的流动性回归。
+"ts_decay_linear(group_neutralize(-rank(news_mins_20_pct_up + news_mins_10_pct_up), subindustry), 8)",极致利好衰竭：多周期利好新闻占比叠加达到极值，预示利好出尽的价格回落。
+"ts_decay_linear(group_neutralize(rank(news_mins_20_pct_dn / (rp_css_price + 0.001)), subindustry), 12)",悲观情绪错位：价格情感尚未修复但利空频次已达极限时的残差反转。
+"ts_decay_linear(group_neutralize(-rank(rp_css_ratings * news_session_range_pct), subindustry), 10)",评级情感覆盖：当高评级情感在全天交易时段内高度曝光，通常伴随短线情绪博弈顶部。
+"ts_decay_linear(group_neutralize(rank(ts_delta(news_mins_2_pct_dn, 1)), subindustry), 5)",隔夜利空冲击反转：针对昨日短时重大利空消息造成的缺口，利用行业中性化捕捉修复。
+"ts_decay_linear(group_neutralize(-rank(rp_css_legal - rp_css_price), subindustry), 20)",法律与价格背离：法律风险新闻得分高（负向）而价格情感平淡，利用这种信息差进行剥离操作。
+"ts_decay_linear(group_neutralize(rank(news_mins_3_pct_up) / (rank(news_mins_20_pct_up) + 0.001), subindustry), 8)",消息频率加速因子：短期新闻密度远超长期平均值，捕捉利好频率异常激增后的均值回归。
+"ts_decay_linear(group_neutralize(-rank(rp_css_society + rp_css_ratings), subindustry), 10)",综合软性特征反转：结合社会与分析师双重情感得分，对行业内过度乐观的情绪进行对冲。
+"ts_decay_linear(group_neutralize(rank(ts_delta(news_session_range_pct, 2)), subindustry), 12)",曝光度变化残差：新闻覆盖范围突然缩小的股票往往被市场过度冷落，存在潜在的价格回暖。
+"ts_decay_linear(group_neutralize(-rank(news_mins_20_pct_up - news_mins_20_pct_dn), subindustry), 10)",全量新闻净值反转：利用长周期多空消息占比之差测算情绪极端度，执行反向头寸。
+"ts_decay_linear(group_neutralize(rank(rp_css_price / (news_session_range_pct + 0.001)), subindustry), 15)",价格情感密度：在低曝光度下出现的价格正面情感，预示着基本面被低估后的价值回归。
+"ts_decay_linear(group_neutralize(-rank(ts_delta(rp_css_legal, 10)), subindustry), 5)",长效法制风险修正：法律风险情感长期改善后的获利了结反转。
+"ts_decay_linear(group_neutralize(rank(news_mins_20_pct_dn) - rank(rp_css_society), subindustry), 10)",社会情感补偿：利空消息频率高但社会公信力得分尚可，捕捉恐慌带来的错误定价。
+"ts_decay_linear(group_neutralize(rank(mdl77_historicalgrowthfactor_pfcfghc) - rank(fnd6_txdbca / (cap + 0.001)), subindustry), 12)",通过递增现金流增长因子减去单位市值的递延所得税资产，剥离市值规模对增长质量的干扰。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_historicalgrowthfactor_rsqr4qsales3y) * rank(fnd2_ebitdm / (fn_op_lease_min_pay_due_a + 0.001)), subindustry), 8)",结合销售增长稳定性与经营租赁覆盖后的息税折旧摊销利润，优化去除重资产杠杆后的收益能力。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_sensitivityfactor400_rev3my1std) - rank(fn_repurchased_shares_value_q / (cap + 0.001)), subindustry), 15)",利用营收敏感度因子对冲回购强度，剔除大盘股回购支撑股价的虚假信号。
+"ts_decay_linear(group_neutralize(rank(mdl77_2globaldevnorthamericasensitivityfactor_oilprice) / (rank(fnd2_dfctrbplancstrg) + 0.001), subindustry), 10)",将油价敏感度与确定性福利计划成本进行风险对冲，过滤能源与劳动力市场Beta。
+"ts_decay_linear(group_neutralize(rank(mdl77_2gdna_beta) * rank(fnd6_newa1v1300_ibadj / (fnd6_txdbca + 0.001)), subindustry), 20)",利用市值Beta调整后的净利润与税收比率，捕捉被市场价格错估的纯净盈利阿尔法。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_put_put_cashburn) - rank(fnd6_newqv1300_xoptdq / (cap + 0.001)), subindustry), 5)",对比现金消耗率与单位市值的期权补偿费用，剔除高管激励过度的虚胖市值公司。
+"ts_decay_linear(group_neutralize(rank(mdl77_pricemomentumfactor_w57w03_rp) - rank(fn_liab_fair_val_l1_q / (fnd2_ebitdm + 0.001)), subindustry), 10)",在价格动量中扣除公允价值负债压力，获得不依赖行业β的纯净动量收益。
+"ts_decay_linear(group_neutralize(rank(mdl77_2historicalgrowthfactor_chg3yepsp) / (rank(fn_comp_not_rec_q) + 0.001), subindustry), 12)",将EPS增长潜力与未确认报酬进行反向加权，剥离报酬体系对成长因子的市值溢价。
+"ts_decay_linear(group_neutralize(rank(mdl77_ohistoricalgrowthfactor_pfcoy3ghc) - rank(fnd2_dbplanepdfbnfpythree / (cap + 0.001)), subindustry), 15)",纯净增长效率剔除养老金福利支出对长期市值的潜在拖累效应。
+"ts_decay_linear(group_neutralize(rank(cashflow_efficiency_rank_derivative) * rank(fnd6_newa1v1300_ibadj / (fn_liab_fair_val_l1_q + 0.001)), subindustry), 8)",现金流效率变动结合负债覆盖后的精简利润，构建免疫市值的质量驱动模型。
+"ts_decay_linear(group_neutralize(regression_neut(rank(mdl177_2_historicalgrowthfactor_rsqr4qsales3y), rank(cap)), subindustry), 10)",通过对市值进行回归残差化，提取与规模无关的销售增长回归质量信号。
+"ts_decay_linear(group_neutralize(rank(fnd6_newqv1300_xoptdq / (fnd2_ebitdm + 0.001)) - rank(mdl77_2gdna_beta), subindustry), 14)",评估相对于盈利能力的期权激励占比，并对冲Beta因子以获得去中心化信号。
+"ts_decay_linear(group_neutralize(rank(mdl77_2_sensitivityfactor400_rev3my1std) / (rank(fn_op_lease_min_pay_due_a / cap) + 0.001), subindustry), 10)",营收敏感度除以经营租赁市值占比，剔除由于固定支出高导致的经营杠杆Beta。
+"ts_decay_linear(group_neutralize(rank(mdl77_pricemomentumfactor_w57w03_rp) * rank(fn_comp_not_rec_q / (cap + 0.001)), subindustry), 12)",结合动量与市值中性化的未认领财报数据，捕捉被忽视的质量动量。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_put_put_cashburn) * rank(fnd2_dfctrbplancstrg / (fnd2_ebitdm + 0.001)), subindustry), 7)",将现金消耗与福利计划赤字结合，识别处于市值高位但基本面脆弱的空头信号。
+"ts_decay_linear(group_neutralize(rank(mdl77_ohistoricalgrowthfactor_pfcoy3ghc) - rank(fn_repurchased_shares_value_q / (fnd6_newa1v1300_ibadj + 0.001)), subindustry), 15)",增长因子中剔除依赖利润回购来支撑市值的成分，寻找真实的内生增长。
+"ts_decay_linear(group_neutralize(rank(cashflow_efficiency_rank_derivative) / (rank(mdl77_2gdna_beta) + 0.001), subindustry), 10)",现金流衍生秩对冲市值Beta，构建针对行业内相对效率的去市值模型。
+"ts_decay_linear(group_neutralize(rank(fnd6_txdbca / (fn_liab_fair_val_l1_q + 0.001)) * rank(mdl77_2historicalgrowthfactor_chg3yepsp), subindustry), 18)",利用资产负债结构的税盾优势与EPS增长率结合，通过子行业中性化消除系统性偏见。
+"ts_decay_linear(group_neutralize(rank(mdl77_2globaldevnorthamericasensitivityfactor_oilprice) - rank(fn_op_lease_min_pay_due_a / (cap + 0.001)), subindustry), 12)",去除油价宏观敏感度与租赁债务市值占比后的复合估值溢价。
+"ts_decay_linear(group_neutralize(rank(mdl177_2_historicalgrowthfactor_rsqr4qsales3y) / (rank(fnd2_dbplanepdfbnfpythree / (fnd2_ebitdm + 0.001)) + 0.001), subindustry), 10)",销售增长R方除以盈利对福利计划覆盖率，挖掘基本面去杠杆后的纯净Alpha。
+"group_neutralize(ts_decay_linear(-1 * rp_ess_technical, 10), subindustry)",利空反转：利用技术面情绪极端值，对过度反应的技术性情绪进行反向对冲。
+"group_neutralize(ts_decay_linear(-1 * rp_ess_price, 5), subindustry)",价格情绪修正：针对价格类新闻情绪的短期超买超卖，进行特质性反转捕捉。
+"group_neutralize(ts_decay_linear(-1 * (news_mins_20_chg / (news_prev_vol + 0.001)), 10), subindustry)",量价残差反转：单位前期波动率下的新闻后20分钟涨幅过大，预示涨势枯竭。
+"group_neutralize(ts_decay_linear(-1 * (rp_css_equity * news_close_vol), 5), subindustry)",机构情绪动量剥离：结合收盘新闻量与股票情绪分值，寻找高热度后的情绪回落。
+"group_neutralize(ts_decay_linear(rank(news_mins_5_pct_dn) - rank(news_mins_3_pct_up), 5), subindustry)",日内多空非对称反转：比较5分钟大幅下跌频率与3分钟上涨频率的失衡，捕捉超跌反弹。
+"group_neutralize(ts_decay_linear(-1 * (news_mins_20_chg - news_low_exc_stddev), 10), subindustry)",极端偏差修复：利用新闻后的20分钟变化减去异常低点标准差，剥离噪音后的残差反转。
+"group_neutralize(ts_decay_linear(-1 * (rp_ess_technical / (news_pre_vwap + 0.001)), 5), subindustry)",估值情绪偏离：相对于新闻前成交均价的技术情绪过热，暗示价格背离。
+"group_neutralize(ts_decay_linear(-1 * (news_mins_3_pct_up / (news_close_vol + 0.001)), 10), subindustry)",缩量冲高反转：新闻引发的3分钟快速冲高若缺乏收盘量能支撑，则进行反向操作。
+"group_neutralize(ts_decay_linear(rank(rp_ess_technical) + rank(news_mins_5_pct_dn), 5), subindustry)",情绪利好抗跌反转：技术面情绪触底且日内伴随急跌，构建超跌后的特质性反补。
+"group_neutralize(ts_decay_linear(-1 * (rp_ess_price - rp_css_equity), 10), subindustry)",情绪偏差收敛：当价格情绪远高于权益整体情绪时，剥离共性后的特质性溢价回吐。
+"group_neutralize(ts_decay_linear(-1 * log(news_prev_vol / (news_close_vol + 0.001)), 5), subindustry)",新闻量能衰减反转：通过前期与收盘量能的对比，识别新闻热度消退后的走势反转。
+"group_neutralize(ts_decay_linear(-1 * (news_mins_20_chg * rp_ess_technical), 5), subindustry)",情绪与涨幅共振反转：技术情绪高涨伴随20分钟急涨，属于典型的短期情绪透支。
+"group_neutralize(ts_decay_linear(rank(news_low_exc_stddev) - rank(news_mins_20_chg), 10), subindustry)",异常度溢价剥离：低位异常标准差较大的个股在经历20分钟涨幅后的回归逻辑。
+"group_neutralize(ts_decay_linear(-1 * (rp_ess_price / (rp_ess_technical + 0.001)), 5), subindustry)",情绪纯度反转：价格情绪相对于技术情绪的过分亢奋，反映了基本面新闻的过度反应。
+"group_neutralize(ts_decay_linear(-1 * (news_mins_3_pct_up * news_pre_vwap), 10), subindustry)",高位脉冲反转：在相对高价位出现的新闻诱导性3分钟急涨，作为短期卖出信号。
+"group_neutralize(ts_decay_linear(rank(news_mins_5_pct_dn) - rank(rp_ess_technical), 5), subindustry)",恐慌情绪修复：技术情绪尚可但日内出现5分钟急跌，捕捉非理性恐慌后的残差向上。
+"group_neutralize(ts_decay_linear(-1 * (news_close_vol / (news_prev_vol + 0.001)) * rp_css_equity, 10), subindustry)",放量情绪透支：伴随高成交量的股权情绪释放，通常预示阶段性顶部的到来。
+"group_neutralize(ts_decay_linear(-1 * ts_mean(news_mins_20_chg, 3), 5), subindustry)",动量均值回归：剥离短期行业共性后，对连续新闻驱动的20分钟窗口变化进行均值回归。
+"group_neutralize(ts_decay_linear(news_low_exc_stddev / (rp_ess_price + 0.001), 10), subindustry)",波动率抑制回归：在价格情绪较低时，利用异常偏离标准差寻找被错杀的特质性反弹性机会。
+"group_neutralize(ts_decay_linear(-1 * (news_mins_20_chg + news_mins_3_pct_up), 5), subindustry)",复合乖离率反转：综合20分钟与3分钟的新闻脉冲强度，捕捉双重时间窗口下的超买修复。
+"ts_decay_linear(group_neutralize(-rank(rp_css_revenue * news_pct_10min), subindustry), 10)",营收情绪与10分钟价格变动的交互反转：捕捉营收极度利好后的过度反应。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_labor / (news_atr14 + 0.001)), subindustry), 5)",劳动力相关新闻情绪经波动率调整后的反转，剥离市场波动对用工情绪的放大效应。
+"ts_decay_linear(group_neutralize(-rank(rp_ess_dividends * news_ratio_vol), subindustry), 12)",分红事件情绪在成交量放大时的反转：高交易量往往代表情绪过热后的竭尽。
+"ts_decay_linear(group_neutralize(-rank(news_mins_7_5_pct_up - news_mins_2_pct_up), subindustry), 8)",不同时间窗动量差值的残差反转：当短时上涨过快偏离中时趋势时看空。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_partner * news_session_range_pct), subindustry), 6)",合作伙伴相关情绪与交易日振幅的乘积反转，识别由合作利好导致的盘中过度拉升。
+"ts_decay_linear(group_neutralize(-rank(news_ratio_vol / (news_atr14 + 0.001)), subindustry), 15)",新闻相关成交量比率与ATR的比值反转，寻找非波动性引起的异常成交量回归。
+"ts_decay_linear(group_neutralize(-rank(rp_css_revenue / (news_session_range_pct + 0.001)), subindustry), 4)",单位价格振幅承载的营收情绪反转：当极小振幅伴随极高情绪时，往往存在预期偏差。
+"ts_decay_linear(group_neutralize(-rank(news_pct_10min * news_ratio_vol), subindustry), 10)",10分钟价格涨幅与成交量放大倍数的交互反转，典型的量价背离式残差回归。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_labor + rp_nip_partner), subindustry), 10)",外部关联性（劳动力及合作伙伴）情绪加总反转，捕捉公司社会关系面异动后的均值回归。
+"ts_decay_linear(group_neutralize(-rank(rp_ess_dividends / (news_mins_7_5_pct_up + 0.001)), subindustry), 7)",分红情绪相对于新闻后上涨频率的反转，识别利好兑现后的动量衰减。
+"ts_decay_linear(group_neutralize(-rank(news_session_range_pct * news_atr14), subindustry), 5)",日内振幅与历史ATR的共同溢价反转：剥离市场共性波动后的个股特质性超涨。
+"ts_decay_linear(group_neutralize(-rank(rp_css_revenue - rp_nip_labor), subindustry), 12)",营收情绪与劳动力压力情绪差值的反转：关注基本面预期与内部成本矛盾导致的溢价。
+"ts_decay_linear(group_neutralize(-rank(news_mins_2_pct_up / (news_ratio_vol + 0.001)), subindustry), 6)",单位新闻成交量支撑的极短线动量反转：缺乏量能支撑的快速冲高往往面临衰竭。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_partner / (news_pct_10min + 0.001)), subindustry), 10)",合作伙伴情绪与短时价格反映的比率反转，挖掘新闻情绪未被价格完全或过度吸收的部分。
+"ts_decay_linear(group_neutralize(-rank(news_atr14 * news_ratio_vol), subindustry), 8)",历史波动率与新闻交易活跃度的复合因子反转，识别低波动背景下的异常放量冲击。
+"ts_decay_linear(group_neutralize(-rank(ts_rank(rp_css_revenue, 20) * news_mins_7_5_pct_up), subindustry), 5)",长期营收情绪分位数与中期涨幅频率的交互反转，捕捉情绪高位下的动量力竭。
+"ts_decay_linear(group_neutralize(-rank(rp_nip_labor * news_ratio_vol), subindustry), 10)",劳动力新闻情绪在放量期的残差反转，针对用工信息披露导致的流动性冲击进行套利。
+"ts_decay_linear(group_neutralize(-rank(news_pct_10min - news_session_range_pct), subindustry), 9)",10分钟价格突变相对于全天振幅的离群值反转，识别突发新闻造成的日内过度反应。
+"ts_decay_linear(group_neutralize(-rank(rp_ess_dividends + rp_css_revenue), subindustry), 11)",股利与营收双重利好情绪加和反转：对抗多重利好叠加引发的不可持续性买入。
+"ts_decay_linear(group_neutralize(-rank(news_mins_2_pct_up * news_atr14), subindustry), 7)",极短线动量与价格风险溢价的乘积反转，在波动加剧时对短线冲高进行对冲。
+"ts_decay_linear(group_neutralize(rank(ts_delta(implied_volatility_mean_20, 5) * returns), subindustry), 10)",隐含波动率变化与收益率的共振：当IV上升且价格上涨时，确认上行动量，反之亦然。
+"ts_decay_linear(group_neutralize(rank(historical_volatility_90 / (implied_volatility_mean_20 + 0.001)), subindustry), 15)",历史波动率与隐含波动率的偏离：捕捉预期波动率被低估带来的价值修复机会。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_put_20 - implied_volatility_call_10), subindustry), 12)",短期虚值看跌期权溢价：衡量市场对短期下行保护的防御性溢价水平。
+"ts_decay_linear(group_neutralize(rank(pcr_vol_30 / (pcr_oi_120 + 0.001)), subindustry), 10)",期权成交量PCR与持仓量PCR的比值：反映短期情绪相对于长期头寸的剧烈博弈。
+"ts_decay_linear(group_neutralize(-rank(implied_volatility_mean_20 / (implied_volatility_mean_360 + 0.001)), subindustry), 20)",波动率期限结构的反转：短期IV远高于长期IV通常对应情绪过热或极度恐慌的顶点。
+"ts_decay_linear(group_neutralize(rank(ts_rank(implied_volatility_put_60, 120)), subindustry), 10)",期权看跌隐含波动率在历史区间的位置，作为市场过度对冲的逆向指标。
+"ts_decay_linear(group_neutralize(rank(forward_price_150 / (option_breakeven_180 + 0.001)), subindustry), 15)",远期价格与期权损益平衡点的分布：衡量衍生品市场定价的隐含上行空间。
+"ts_decay_linear(group_neutralize(-rank(ts_delta(pcr_oi_120, 10)), subindustry), 10)",长期持仓PCR的变化率：捕捉大资金对冲头寸撤出的平仓信号。
+"ts_decay_linear(group_neutralize(rank(correlation(implied_volatility_mean_20, returns, 20)), subindustry), 12)",IV与收益率的相关性：正相关性增强往往预示着动能加速阶段。
+"ts_decay_linear(group_neutralize(-rank(ts_std_dev(implied_volatility_mean_20, 20)), subindustry), 10)",波动率的波动性（Vol of Vol）：压制IV波动过剧的公司，寻找稳健的动量确认。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_10 / (implied_volatility_mean_20 + 0.001)), subindustry), 10)",超短期看涨期权意愿：识别投资者对即期爆发性利好的溢价支付意愿。
+"ts_decay_linear(group_neutralize(-rank(implied_volatility_put_60 / (historical_volatility_90 + 0.001)), subindustry), 15)",中长看跌IV相对已实现波动率的溢价：评估下行风险定价是否过高。
+"ts_decay_linear(group_neutralize(rank(ts_delta(option_breakeven_180, 5) / (forward_price_150 + 0.001)), subindustry), 8)",期权盈亏平衡点的上移斜率，反映了期权庄家和大型投机者对价格中枢的预期抬升。
+"ts_decay_linear(group_neutralize(rank(ts_rank(pcr_vol_30, 60)), subindustry), 10)",成交量PCR的历史百分位：寻找短期情绪极值后的趋势加速。
+"ts_decay_linear(group_neutralize(-rank(implied_volatility_mean_360 - ts_delay(implied_volatility_mean_360, 20)), subindustry), 20)",长期IV基准的稳定性：规避长期不确定性陡增的公司。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_put_20 * pcr_vol_30), subindustry), 12)",看跌压力共振因子：结合IV水平与量能比例，识别深度回调后的买入机会。
+"ts_decay_linear(group_neutralize(rank(returns / (implied_volatility_mean_20 + 0.001)), subindustry), 10)",单位隐含波动率下的收益表现，即隐含波动率校正后的动量因子。
+"ts_decay_linear(group_neutralize(-rank(ts_max(implied_volatility_call_10, 20)), subindustry), 15)",看涨IV峰值压制：回避短期认购期权极度拥挤、波动率透支的情况。
+"ts_decay_linear(group_neutralize(rank(ts_delta(forward_price_150 - option_breakeven_180, 10)), subindustry), 10)",远期价差动量：远期预测价格与平衡点之差的扩张，预示着基本面的强劲支撑。
+"ts_decay_linear(group_neutralize(rank(ts_rank(implied_volatility_mean_20, 252) - ts_rank(historical_volatility_90, 252)), subindustry), 15)",IV百分位与HV百分位的差值：捕捉市场预期偏差最剧烈的品种。
+"ts_decay_linear(group_neutralize(-1 * rank(rp_css_ptg), subindustry), 10)",对目标价预测新闻情绪进行全截面排序并做子行业中性化，利用情绪极端高涨后的特质性反转效应。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_insider / (news_prev_vol + 0.001)), subindustry), 15)",单位新闻量下的内部交易情绪，通过中性化剥离行业共同暴露，捕捉内部交易消息过热后的回撤。
+"ts_decay_linear(group_neutralize(-1 * news_mins_20_chg, subindustry), 5)",20分钟内新闻频率的极速变化往往预示情绪见顶，对该指标进行行业中性化后做短期反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_labor - ts_mean(rp_nip_labor, 10)), subindustry), 20)",劳动力相关新闻影响预测值偏离其10日均线时，代表非理性冲击，通过行业中性化捕捉残差反转。
+"ts_decay_linear(group_neutralize(-1 * rank(news_high_exc_stddev * rp_css_ptg), subindustry), 12)",在新闻高波动的极端背景下，目标价情绪的冲击更容易透支，中性化后挖掘特质性过度反应的修复。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_dividends / (news_dividend_yield + 0.001)), subindustry), 8)",红利事件情绪相对股息率的异常值，反映了分红预期的超涨，剥离行业因素后交易其回归。
+"ts_decay_linear(group_neutralize(-1 * rp_nip_equity, subindustry), 10)",权益类新闻影响预测值反映了融资或股权变动情绪，通过中性化剔除宏观逻辑，寻找残差层面的反转。
+"ts_decay_linear(group_neutralize(-1 * news_mins_1_pct_dn, subindustry), 5)",新闻发布后1分钟内的极端下跌幅度通常包含恐慌因子，行业中性化后捕捉短期情绪过激的均值回归。
+"ts_decay_linear(group_neutralize(-1 * ts_delta(rp_css_ptg, 5), subindustry), 10)",过去5天目标价情绪的变动率，若变动过快则存在情绪动量衰减，通过行业中性化提取特质性反转信号。
+"ts_decay_linear(group_neutralize(-1 * (news_prev_vol / (news_high_exc_stddev + 0.001)), subindustry), 15)",新闻存量与异常波动率的比值，代表信息消化吸收后的冷淡期，中性化后用于寻找被忽视的反转点。
+"ts_decay_linear(group_neutralize(-1 * rank(rp_nip_labor + rp_css_insider), subindustry), 10)",结合劳动力情绪与内部人交易情绪的综合因子，通过强力反转逻辑捕捉跨维度情绪共振后的衰退。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_ptg * news_mins_20_chg), subindustry), 6)",当新闻突发节奏与目标价情绪同向共振时，往往是趋势末端的信号，中性化后捕捉其残差层面的反转。
+"ts_decay_linear(group_neutralize(-1 * rank(news_dividend_yield), subindustry), 20)",对新闻源股息率进行全截面排序并做子行业中性化，利用高股息新闻热度后的反向估值修正。
+"ts_decay_linear(group_neutralize(-1 * ts_sum(rp_ess_dividends, 5), subindustry), 10)",过去5日红利情绪的累积，反映了利好消息的过度堆砌，通过中性化剥离行业动量做深度反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_equity / (news_prev_vol + 0.001)), subindustry), 12)",经过新闻量标准化的权益情绪冲击，在中性化处理后能有效隔离单只股票的特质性情绪过度反应。
+"ts_decay_linear(group_neutralize(-1 * news_high_exc_stddev, subindustry), 15)",利用新闻异常波动率本身作为反转因子，高波动往往对应信息过度反馈，行业中性化后交易其收敛。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_ptg - ts_mean(rp_css_ptg, 20)), subindustry), 10)",目标价情绪与其长期均线的残差，代表了短期的极端偏离，通过中性化增强因子的特质反转属性。
+"ts_decay_linear(group_neutralize(-1 * rank(news_mins_1_pct_dn + news_mins_20_chg), subindustry), 5)",复合短期下跌压力与新闻频率变化，识别极度恐慌的抛售点，中性化后做多特质性受损过重的个股。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_labor / (rp_nip_equity + 0.001)), subindustry), 10)",劳动力情绪相对于权益情绪的异常比例，刻画了公司治理成本焦点的偏移，利用中性化后的残差进行反转。
+"ts_decay_linear(group_neutralize(-1 * rank(rp_ess_dividends * news_prev_vol), subindustry), 14)",红利情绪与新闻量的交互项，捕捉在极度关注下的分红利好出尽效应，中性化后执行反转策略。
+"group_neutralize(ts_decay_linear(rank(anl4_qfv4_cfps_median / (fnd6_mkvaltq + 0.001)) - rank(fn_interest_payable_a / (fnd6_newa2v1300_seqo + 0.001)), 10), subindustry)",分析师预期的现金流中值与市值占比，对冲利息支出的负债压力，寻找高预期且财务稳健的个股。
+"group_neutralize(ts_decay_linear(rank(min_free_cash_flow_guidance / (fnd6_aox + 0.001)) - rank(fn_liab_fair_val_l1_a / (fnd6_mkvaltq + 0.001)), 10), subindustry)",保守自由现金流指引与总资产比率，排除公允价值负债敞口过大的公司。
+"group_neutralize(ts_decay_linear(-rank(sales_estimate_stddev_quarterly / (sales_estimate_average_quarterly + 0.001)) + rank(fnd6_newa2v1300_seqo / (fnd6_mkvaltq + 0.001)), 12), subindustry)",销售预测一致性（低偏差）叠加高股东权益占比，捕捉预期稳定且财务质量高的标的。
+"group_neutralize(ts_decay_linear(rank(min_book_value_per_share_guidance / (close + 0.001)) * rank(fnd6_newqv1300_cibegniq / (fnd6_mkvaltq + 0.001)), 8), subindustry)",分析师给出的账面价格下限指引与期初净利润的交互作用，验证预期差的财务支撑。
+"group_neutralize(ts_decay_linear(rank(anl4_ptp_low / (fnd6_mkvaltq + 0.001)) - rank(fn_comp_not_rec_a / (fnd6_newa2v1300_seqo + 0.001)), 15), subindustry)",保守税前利润预期对冲未列报补偿支出，识别管理层激励结构健康且盈利预期稳健的个股。
+"group_neutralize(ts_decay_linear(delta(sales_estimate_average_quarterly / (fnd6_newa2v1300_seqo + 0.001), 5) - rank(fnd6_dxd2), 10), subindustry)",季度销售预期相对于权益的增长动力，并排除股息/负债调节项（dxd2）的财务干扰。
+"group_neutralize(ts_decay_linear(rank(anl4_qfv4_cfps_median) / (rank(anl4_afv4_div_std + 0.001) + rank(fn_income_tax_expense_q + 0.001)), 10), subindustry)",现金流预期相对于股息稳定性预期及所得税负担的性价比，优选高现金流低税务风险个股。
+"group_neutralize(ts_decay_linear(rank(min_free_cash_flow_guidance / (fnd6_prstkc + 0.001)) - rank(sales_estimate_standard_deviation / (sales_estimate_average_quarterly + 0.001)), 10), subindustry)",自由现金流指引对优先股的覆盖能力，结合销售预测一致性进行财务质量校准。
+"group_neutralize(ts_decay_linear(rank(ts_sum(anl4_capex_flag, 10)) * rank(fnd6_newa2v1300_seqo / (fn_liab_fair_val_l1_a + 0.001)), 20), subindustry)",资本支出标志（扩张信号）与杠杆透明度（权益/公允价值负债）的正交组合。
+"group_neutralize(ts_decay_linear(-rank(min_stock_option_expense_guidance_2 / (fnd6_mkvaltq + 0.001)) + rank(anl4_ptp_low / (fn_interest_payable_a + 0.001)), 10), subindustry)",控制期权开支指引（治理成本）的同时，寻找税前利润指引能覆盖利息支出的标的。
+"group_neutralize(ts_decay_linear(correlation(sales_estimate_average_quarterly, fnd6_mkvaltq, 5) - rank(fn_income_tax_expense_q / (fnd6_newqv1300_cibegniq + 0.001)), 10), subindustry)",销售预期与市值的相关性回归，减去实际税负成本率，寻找估值驱动且税务健康的标的。
+"group_neutralize(ts_decay_linear(rank(anl4_qfv4_cfps_median / (fnd6_aox + 0.001)) - rank(fnd6_prstkc / (fnd6_newa2v1300_seqo + 0.001)), 5), subindustry)",分析师现金流中值对总资产的贡献度，剔除优先股对普通股权益的挤占影响。
+"group_neutralize(ts_decay_linear(rank(min_free_cash_flow_guidance / (sales_estimate_average_quarterly + 0.001)) + rank(fnd6_dxd2 / (fnd6_mkvaltq + 0.001)), 15), subindustry)",预期自由现金流利润率（预期FCF/预期销售）与财务调整因子的综合评估。
+"group_neutralize(ts_decay_linear(ts_std_dev(sales_estimate_average_quarterly, 10) / (ts_std_dev(fn_income_tax_expense_q, 10) + 0.001), 10), subindustry)",销售预期波动的韧性，相对于所得税支出的变动频率，寻找经营弹性优于财务波动的公司。
+"group_neutralize(ts_decay_linear(rank(min_book_value_per_share_guidance) - rank(fn_comp_not_rec_a / (fnd6_newa2v1300_seqo + 0.001)), 10), subindustry)",净资产保底预期与隐形成本（未记录补偿）的博弈，寻找高质量账面价值标的。
+"group_neutralize(ts_decay_linear(rank(anl4_ptp_low / (sales_estimate_average_quarterly + 0.001)) * rank(fnd6_newqv1300_cibegniq / (fnd6_newa2v1300_seqo + 0.001)), 12), subindustry)",分析师预期的最低利润率与实际ROE（期初净利润/权益）的正交选股逻辑。
+"group_neutralize(ts_decay_linear(-rank(sales_estimate_standard_deviation / (fnd6_mkvaltq + 0.001)) - rank(fn_liab_fair_val_l1_a / (fnd6_aox + 0.001)), 10), subindustry)",打压预期分歧大且隐藏负债（公允价值计量负债）占比高的风险标的。
+"group_neutralize(ts_decay_linear(rank(anl4_afv4_div_std / (anl4_qfv4_cfps_median + 0.001)) + rank(fnd6_prstkc / (fnd6_mkvaltq + 0.001)), 10), subindustry)",分红预期稳定性与资本结构（优先股）的组合，反映财务分配政策的质量。
+"group_neutralize(ts_decay_linear(rank(min_free_cash_flow_guidance / (fnd6_newa2v1300_seqo + 0.001)) * rank(fnd6_dxd2), 8), subindustry)",单位权益带来的自由现金流指引产出，并结合财务调节项增强信号强度。
+"group_neutralize(ts_decay_linear(rank(sales_estimate_average_quarterly / (fn_interest_payable_a + 0.001)) - rank(min_stock_option_expense_guidance_2 / (fnd6_newqv1300_cibegniq + 0.001)), 15), subindustry)",销售规模对利息负担的覆盖能力，排除期权激励成本过高的预期下调风险。
+"ts_decay_linear(group_neutralize(-1 * (news_pct_60min / (abs(rp_ess_credit_ratings) + 0.001)), subindustry), 10)",新闻60分钟收益率相对于信用评级情绪得分的残差反转，捕捉情绪过度反应后的特质性修复。
+"ts_decay_linear(group_neutralize(-1 * (news_session_range_pct / (news_mins_10_pct_up + 0.001)), subindustry), 5)",日内新闻振幅对开盘10分钟异常拉升的残差反转，剥离极速上涨后的乖离率。
+"ts_decay_linear(group_neutralize((rp_css_insider - (news_all_vwap / (news_spy_last + 0.001))), subindustry), 12)",内部人交易情绪与全天成交均价（相对大盘）的背离度，利用内部人逻辑对冲价格动量。
+"ts_decay_linear(group_neutralize(-1 * ts_delta(news_pe_ratio, 5) / (ts_std(news_session_range, 20) + 0.001), subindustry), 8)",新闻动态市盈率变动量对新闻波动率的残差，识别估值修复中的非理性波动。
+"ts_decay_linear(group_neutralize(-1 * (ts_rank(news_pct_60min, 20) - ts_rank(rp_nip_credit_ratings, 20)), subindustry), 10)",新闻收益率分位数与信用影响力分位数的差值反转，剥离信用逻辑后的价格噪声。
+"ts_decay_linear(group_neutralize(-1 * (news_mins_10_pct_up / (abs(news_pct_60min) + 0.001)), subindustry), 3)",极短线（10分钟）涨幅占1小时涨幅比例的残差反转，针对消息落地瞬间的脉冲式超买。
+"ts_decay_linear(group_neutralize(rank(rp_ess_credit_ratings) - rank(news_session_range_pct), subindustry), 15)",信用评级情绪分位与振幅分位的乖离度，捕捉情绪温和但价格剧烈波动的反转机理。
+"ts_decay_linear(group_neutralize(-1 * (news_all_vwap / (ts_avg(news_all_vwap, 10) + 0.001)) * rp_css_insider, subindustry), 7)",基于全天VWAP偏离度并结合内部人情绪权重的修正反转模型。
+"ts_decay_linear(group_neutralize(-1 * (news_pct_60min / (news_pe_ratio + 0.001)), subindustry), 10)",利用市盈率作为基准剥离动量，识别高估值背景下消息驱动的过度拉升。
+"ts_decay_linear(group_neutralize(-1 * (news_session_range / (news_spy_last + 0.001)), subindustry), 6)",个股新闻振幅相对标普500基准表现的残差反转，剔除系统性冲击后的个股波动。
+"ts_decay_linear(group_neutralize(ts_delta(rp_nip_credit_ratings, 3) / (abs(news_pct_60min) + 0.001), subindustry), 10)",信用影响力变化量与价格变动的负相关性建模，寻找消息溢价的衰竭点。
+"ts_decay_linear(group_neutralize(-1 * (news_mins_10_pct_up - ts_avg(news_mins_10_pct_up, 10)) / (news_session_range_pct + 0.001), subindustry), 4)",开盘突发上涨强度对日内总振幅的异常偏离，典型的新闻冲击残差反转。
+"ts_decay_linear(group_neutralize(-1 * (rank(news_all_vwap) / (rank(rp_ess_credit_ratings) + 0.001)), subindustry), 8)",成交均价分位与信用情绪分位的比例失衡，捕捉量价配合与情绪背离的转折点。
+"ts_decay_linear(group_neutralize((rp_css_insider / (news_pe_ratio + 0.001)) - news_pct_60min, subindustry), 12)",综合内部人信心与价值底座，剥离出由于短线消息驱动的虚增涨幅。
+"ts_decay_linear(group_neutralize(-1 * ts_rank(news_session_range_pct / (news_spy_last + 0.001), 20), subindustry), 5)",针对消息引发的个股相对大盘的异常波动率分位数进行反转交易。
+"ts_decay_linear(group_neutralize(-1 * (news_pct_60min / (ts_std(news_pct_60min, 10) + 0.001)), subindustry), 10)",新闻回报率经由自身波动率调整后的残差反转，降低高波动个股的权重干扰。
+"ts_decay_linear(group_neutralize((rp_nip_credit_ratings - rp_ess_credit_ratings) / (news_session_range + 0.001), subindustry), 15)",信用评级两个维度的差值（影响力减情绪度）在震荡环境下的套利修复逻辑。
+"ts_decay_linear(group_neutralize(-1 * (news_all_vwap - news_spy_last) / (news_mins_10_pct_up + 0.001), subindustry), 6)",个股相对于指数的超额VWAP在短线剧烈拉升后的回归力矩。
+"ts_decay_linear(group_neutralize(-1 * (ts_rank(news_pe_ratio, 252) * news_pct_60min), subindustry), 9)",在高市盈率分位背景下的新闻拉升更容易引发均值回归，利用估值压力做残差修正。
+"ts_decay_linear(group_neutralize(-1 * (news_session_range_pct - ts_avg(news_session_range_pct, 20)) / (rp_css_insider + 0.001), subindustry), 11)",日内振幅异常值在内部人情绪对冲后的特质性反转信号。
+"ts_decay_linear(group_neutralize(rank(earnings_per_share_median_value / (fn_allowance_for_doubtful_accounts_receivable_a + 0.001)), subindustry), 12)",预期EPS中位数与坏账准备金之比，寻找高预期且资产质量稳健（坏账计提少）的标的。
+"ts_decay_linear(group_neutralize(rank(delta(anl4_netprofit_high, 10)) - rank(delta(fnd6_newa1v1300_gdwl, 20)), subindustry), 10)",分析师最高净利润预期的增量与商誉变动的差值，剔除依靠商誉减值调节利润的个股。
+"ts_decay_linear(group_neutralize(rank(anl4_fcfps_number / (fnd6_optprcca + 0.001)), subindustry), 15)",分析师预期的每股自由现金流与期权调整后价格的比值，侧重现金流支撑的估值溢价。
+"ts_decay_linear(group_neutralize(rank(pretax_income_reported_min_guidance / (fnd6_mfma1_at + 0.001)), subindustry), 8)",最低税前利润指引与总资产的比率，衡量管理层保守预期下的资产回报效率。
+"ts_decay_linear(group_neutralize(rank(anl4_fcf_mean) - rank(stock_option_expense_max_guidance_qtr / (actual_sales_value_annual + 0.001)), subindustry), 10)",平均自由现金流预期排除掉过高股权激励支出后的表现，识别真实盈利能力。
+"ts_decay_linear(group_neutralize(rank(anl4_bvps_low / (fn_assets_fair_val_l1_a + 0.001)), subindustry), 20)",分析师最低每股净资产预期与一级公允价值资产的比值，验证账面价值的硬度。
+"ts_decay_linear(group_neutralize(rank(delta(earnings_per_share_median_value, 5)) / (fnd6_txtubsettle + 0.001), subindustry), 10)",EPS预期动量经过税务结算不确定性调整后的得分，寻找受税务风险干扰小的增长。
+"ts_decay_linear(group_neutralize(rank(anl4_afv4_eps_low) - rank(fn_comp_fair_value_assumptions_weighted_avg_vol_rate_a), subindustry), 10)",排除掉高波动率估值假设影响后的最低预期EPS排名，追求保守性下的超额收益。
+"ts_decay_linear(group_neutralize(rank(anl4_netprofit_high / (fnd6_newa1v1300_aol2 + 0.001)), subindustry), 12)",最高预测净利润相对于其他流动负债的比率，衡量高增长预期的财务安全性。
+"ts_decay_linear(group_neutralize(rank(delta(anl4_fcf_mean, 20)) - rank(fn_oth_comp_forfeitures_fair_value_a), subindustry), 10)",自由现金流预期增长与报表中没收资产公允价值的背离，识别高质量的内生增长。
+"ts_decay_linear(group_neutralize(rank(actual_sales_value_annual / (fnd6_ivao + 0.001)), subindustry), 15)",年实际销售额与其他投资资产的比率，考察非核心资产对主营业务收入的摊薄影响。
+"ts_decay_linear(group_neutralize(rank(anl4_totgw_number) - rank(fnd6_newa1v1300_gdwl / (fnd6_mfma1_at + 0.001)), subindustry), 10)",跟踪分析师覆盖广度与商誉占比的负相关，寻找低商誉风险的多头覆盖标的。
+"ts_decay_linear(group_neutralize(rank(earnings_per_share_median_value) * rank(1 / (fn_allowance_for_doubtful_accounts_receivable_a + 0.001)), subindustry), 12)",高预期收益与低坏账准备的乘法组合，强化财务质量对利润支撑的过滤。
+"ts_decay_linear(group_neutralize(rank(anl4_fcfps_number - anl4_bvps_low / (fnd6_optprcca + 0.001)), subindustry), 10)",每股现金流预期与每股净资产预期在当前股价下的综合偏离度。
+"ts_decay_linear(group_neutralize(rank(pretax_income_reported_min_guidance / (actual_sales_value_annual + 0.001)), subindustry), 8)",管理层最低指引利润率，寻找在最坏情况下仍能保持盈利韧性的公司。
+"ts_decay_linear(group_neutralize(rank(delta(anl4_netprofit_high, 5)) / (fn_assets_fair_val_l1_a + 0.001), subindustry), 10)",净利润最高预期变化率与高流动性公允价值资产的配比，寻找有现金支撑的利润扩张。
+"ts_decay_linear(group_neutralize(rank(anl4_fcf_mean / (fnd6_newa1v1300_aol2 + 0.001)), subindustry), 15)",预期自由现金流与流动资产负债比例，衡量短期偿债能力约束下的现金流生成力。
+"ts_decay_linear(group_neutralize(rank(earnings_per_share_median_value / (stock_option_expense_max_guidance_qtr + 0.001)), subindustry), 10)",预期EPS相对于股权激励成本的管理效率，寻找激励方案对股东利润侵蚀较小的标的。
+"ts_decay_linear(group_neutralize(rank(delta(anl4_bvps_low, 10)) - rank(delta(fnd6_txtubsettle, 10)), subindustry), 12)",预期每股净资产的增长减去税务结算的不确定性变化，优化净资产增长的稳健性。
+"ts_decay_linear(group_neutralize(rank(anl4_afv4_eps_low / (fn_comp_fair_value_assumptions_weighted_avg_vol_rate_a + 0.001)), subindustry), 15)",分析师最保守EPS预期与估值波动假设之比，寻找低估值依赖型的高增长预期。
+"ts_decay_linear(group_neutralize(rank(returns(5)) * rank(ts_delta(implied_volatility_mean_90, 5)), subindustry), 10)",价格动量与90天隐含波动率变化的乘积，用于捕捉波动率扩张确认的价格趋势。
+"ts_decay_linear(group_neutralize(historical_volatility_90 / (implied_volatility_mean_90 + 0.001), subindustry), 10)",历史波动率与90天均值隐含波动率的比率，衡量波动率风险溢价的回归。
+"ts_decay_linear(group_neutralize(ts_delta(call_breakeven_150, 10) / (call_breakeven_150 + 0.001), subindustry), 15)",150天看涨期权盈亏平衡点的动量变化，反映市场对长期上行空间预期的调整。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_60) * rank(ts_delta(implied_volatility_mean_90, 5)), subindustry), 10)",60天波动率偏度与近期IV变化的结合，捕捉尾部风险定价异常时的动量信号。
+"ts_decay_linear(group_neutralize(implied_volatility_put_10 / (implied_volatility_put_20 + 0.001), subindustry), 5)",10天与20天看跌期权隐含波动率的比值，衡量短期对冲需求的急剧上升。
+"ts_decay_linear(group_neutralize(rank(pcr_vol_1080) * rank(ts_delta(implied_volatility_mean_270, 20)), subindustry), 10)",长期成交量PCR与远期IV动量的交叉信号，寻找长期情绪反转的确认。
+"ts_decay_linear(group_neutralize(implied_volatility_mean_90 / (implied_volatility_mean_270 + 0.001), subindustry), 10)",90天与270天IV的期限结构斜率，反映波动率曲面的期限溢价。
+"ts_decay_linear(group_neutralize(rank(ts_delta(put_breakeven_90, 5)) * rank(returns(5)), subindustry), 10)",90天看跌期权盈亏平衡点变化与价格回报的负相关性确认。
+"ts_decay_linear(group_neutralize(ts_rank(call_breakeven_1080, 252) - ts_rank(implied_volatility_mean_90, 252), subindustry), 20)",超长期看涨盈亏平衡点排名与中期IV排名的背离，识别深度价值。
+"ts_decay_linear(group_neutralize(implied_volatility_mean_skew_60 / (historical_volatility_90 + 0.001), subindustry), 10)",波动率偏度相对于历史波动率的正规化指标，衡量偏度定价的贵贱。
+"ts_decay_linear(group_neutralize(rank(ts_delta(implied_volatility_put_10, 3)) * rank(ts_delta(implied_volatility_put_20, 3)), subindustry), 5)",短端看跌期权波动率的加速度，捕捉暴跌前夕的期权异动信号。
+"ts_decay_linear(group_neutralize(call_breakeven_150 / (put_breakeven_90 + 0.001), subindustry), 10)",看涨150天与看跌90天盈亏平衡点的比率，衡量市场对上下行风险的非对称预期。
+"ts_decay_linear(group_neutralize(ts_delta(implied_volatility_mean_90, 20) / (implied_volatility_mean_90 + 0.001), subindustry), 20)",90天均值IV的月度变化率，识别波动率制度切换的拐点。
+"ts_decay_linear(group_neutralize(rank(pcr_vol_1080) * rank(historical_volatility_90), subindustry), 15)",长期PCR与历史波动率共振，识别高波动下的看跌挤压机会。
+"ts_decay_linear(group_neutralize(abs(ts_delta(call_breakeven_1080, 60)) / (implied_volatility_mean_270 + 0.001), subindustry), 20)",远期盈亏平衡点变动幅度相较于远期IV的比值，寻找预期调整的剧烈程度。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_put_20) - rank(implied_volatility_mean_90), subindustry), 10)",特定期限看跌IV与平均IV的排名差，衡量看跌期权的相对吸引力。
+"ts_decay_linear(group_neutralize(ts_delta(implied_volatility_mean_skew_60, 10), subindustry), 10)",60天波动率偏度的短期动量，捕捉尾部风险溢价的快速转移。
+"ts_decay_linear(group_neutralize(historical_volatility_90 * pcr_vol_1080 / (implied_volatility_mean_90 + 0.001), subindustry), 10)",历史波动率与PCR的组合，经由隐含波动率调节，识别超卖区域。
+"ts_decay_linear(group_neutralize(rank(ts_delta(call_breakeven_150, 5)) - rank(ts_delta(put_breakeven_90, 5)), subindustry), 5)",看涨与看跌盈亏平衡点变动动量的差值，用于判断市场多空力量的边际变化。
+"ts_decay_linear(group_neutralize(implied_volatility_mean_270 / (implied_volatility_mean_skew_60 + 0.001), subindustry), 15)",远期均值波动率与偏度的比值，评估波动率曲线结构的平滑度。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_10) / (rank(implied_volatility_mean_skew_360) + 0.001), subindustry), 10)",短期偏度相对于长期偏度的相对强弱，捕捉期限结构中的波动率均值回归信号。
+"ts_decay_linear(group_neutralize(-ts_delta(implied_volatility_mean_120, 5) / (implied_volatility_mean_1080 + 0.001), subindustry), 5)",中期隐含波动率下降速率与长期波动率之比，寻觅波动率平滑下降后的反弹机会。
+"ts_decay_linear(group_neutralize(rank(pcr_vol_720) - rank(pcr_oi_60), subindustry), 12)",长周期成交量看跌看涨比与短周期持仓量比的差值，刻画资金情绪的短期背离。
+"ts_decay_linear(group_neutralize(forward_price_720 / (forward_price_60 + 0.001), subindustry), 10)",远期远端价格与近端价格的比率，反映远期溢价对股票未来动能的隐含预期。
+"ts_decay_linear(group_neutralize(rank(put_breakeven_720) / (rank(forward_price_720) + 0.001), subindustry), 8)",看跌期权盈亏平衡点与远期价格的相关性，评估长期下行风险是否过载。
+"ts_decay_linear(group_neutralize(ts_rank(implied_volatility_put_10, 20), subindustry), 5)",短期看跌期权隐含波动率的历史分位值，高波动分位通常对应恐慌情绪触底。
+"ts_decay_linear(group_neutralize(implied_volatility_mean_120 / (implied_volatility_mean_1080 + 0.001), subindustry), 15)",中期波动率与超长周期波动率的收敛度，识别该标的的波动状态是否偏离长期基准。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_10) * rank(ts_delta(forward_price_60, 5)), subindustry), 10)",短期偏度与近端远期价格变动的乘积，作为动量确认信号，捕捉高偏度下的趋势延续。
+"ts_decay_linear(group_neutralize(-1 * ts_delta(pcr_oi_60, 10), subindustry), 5)",持仓看跌看涨比的变化率，反映对冲盘的撤退或入场，反向指标性质。
+"ts_decay_linear(group_neutralize(implied_volatility_put_10 / (implied_volatility_mean_10 + 0.001), subindustry), 10)",看跌隐含波动率相对于均值波动率的溢价，衡量个股防守需求的集中度。
+"ts_decay_linear(group_neutralize(rank(forward_price_720 - forward_price_60), subindustry), 20)",期权远端与近端远期价格的绝对利差，表征市场对长期基本面的折现率变化。
+"ts_decay_linear(group_neutralize(ts_rank(pcr_vol_720, 60), subindustry), 10)",长周期成交量PCR在过去三个月的分位值，用于识别异常的情绪极端点。
+"ts_decay_linear(group_neutralize(log(implied_volatility_mean_1080 + 0.001) - log(implied_volatility_mean_120 + 0.001), subindustry), 10)",波动率曲面的期限利差，通常反映市场对远期风险溢价的重新定价。
+"ts_decay_linear(group_neutralize(implied_volatility_mean_skew_360 / (implied_volatility_mean_skew_10 + 0.001), subindustry), 10)",偏度期限结构的倒置程度，衡量短期恐慌是否显著超过长期对冲成本。
+"ts_decay_linear(group_neutralize(rank(put_breakeven_720) - rank(implied_volatility_put_10), subindustry), 5)",盈亏平衡位置与隐含波动率的排位差，寻找IV虚高但下行保护价格合理的标的。
+"ts_decay_linear(group_neutralize(ts_delta(forward_price_720, 20) / (forward_price_720 + 0.001), subindustry), 10)",长期远期价格的月度变动率，一种纯粹的基于衍生品定价的趋势动能指标。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_120) * rank(pcr_oi_60), subindustry), 15)",中期波动率与短期持仓PCR的交互共振，筛选出处于高波动对冲高峰的拐点。
+"ts_decay_linear(group_neutralize(ts_delta(implied_volatility_mean_skew_10, 5), subindustry), 5)",短期偏度的5日变动，捕捉偏度突然陡峭化带来的交易机会。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_1080) - rank(implied_volatility_mean_120), subindustry), 10)",长短期波动率排名的偏离度，反映市场定价在不同久期上的非对称性。
+"ts_decay_linear(group_neutralize(implied_volatility_put_10 / (put_breakeven_720 + 0.001), subindustry), 10)",单位盈亏平衡价格所承担的瞬时隐含波动压力，衡量下行风险的杠杆比率。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_price / (ts_mean(rp_ess_price, 20) + 0.001)), subindustry), 10)",剥离20日价格相关情绪均值后的特质性价格情绪反转，捕捉过度反应后的回归。
+"ts_decay_linear(group_neutralize(-1 * (news_ton_last / (news_low_exc_stddev + 0.001)), subindustry), 5)",利用新闻低超额标准差作为分母对最新新闻语气进行标准化，剥离波动率后的纯粹语气反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_partner / (rp_css_partner + 0.001)), subindustry), 10)",个体伙伴情绪相对于截面伙伴情绪的偏离度反转，寻找特质性伙伴利好/利空过头的机会。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_ratings / (ts_step(5) + 0.001)), subindustry), 8)",针对分析师评级相关的新闻冲击进行短期反转建模，平滑近期情绪异动。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_society - ts_mean(rp_ess_society, 10)) / (rp_ess_assets + 0.001), subindustry), 12)",社会责任情绪偏离均值后的残差，并以资产情绪规模调整，捕捉特质性非财务情绪反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_inverstor / (news_cap + 0.001)), subindustry), 10)",投资者截面情绪在资本类新闻背景下的过度乐观/悲观修复，属于典型的机构残差反转。
+"ts_decay_linear(group_neutralize(-1 * (news_cap / (rp_ess_assets + 0.001)), subindustry), 5)",资本类新闻强度相对于资产类情绪的残差，识别由于资本运作新闻导致的短期价量偏离修复。
+"ts_decay_linear(group_neutralize(-1 * (ts_delta(news_ton_last, 3) / (news_low_exc_stddev + 0.001)), subindustry), 7)",新闻语气3日变化量的变动率反转，旨在剥离趋势动量后捕捉极速变化的情绪拐点。
+"ts_decay_linear(group_neutralize(-1 * (rank(rp_ess_price) / (rank(ts_delta(close, 5)) + 0.001)), subindustry), 10)",价格情绪排名与5日价格动量排名的商，剥离显性价格动量后的纯情绪残差反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_ratings - ts_mean(rp_nip_ratings, 20)) / (news_cap + 0.001), subindustry), 6)",剥离长期均值的评级新闻情绪，针对资本类变动进行残差化处理的空头/多头反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_partner * news_low_exc_stddev) / (rp_ess_assets + 0.001), subindustry), 10)",结合伙伴情绪与新闻波动率的复合因子，在资产情绪基准下寻找被错杀的特质性反转机会。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_inverstor - rp_ess_society) / (abs(news_ton_last) + 0.001), subindustry), 8)",投资者情绪与社会情绪的背离度残差，通过语气绝对值标准化后预测极端分歧后的收敛。
+"ts_decay_linear(group_neutralize(-1 * ts_rank(rp_ess_price / (news_cap + 0.001), 10), subindustry), 5)",周期内价格情绪对资本新闻强度的比值的序列排名反转，寻找相对资本投入而言过度反应的情绪点。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_assets / (ts_mean(rp_ess_assets, 5) + 0.001)), subindustry), 12)",资产相关新闻情绪的短期突发增量反转，剥离5日均值后的特质性跳空修复。
+"ts_decay_linear(group_neutralize(-1 * (rp_css_partner / (news_low_exc_stddev + 0.001)), subindustry), 10)",行业伙伴截面情绪相对于低波动背景的异常放大反转，剔除噪音后的特质反转信号。
+"ts_decay_linear(group_neutralize(-1 * (rp_nip_ratings / (ts_rank(rp_ess_price, 20) + 0.001)), subindustry), 8)",评级冲击相对于价格情绪长期排名的残差，捕捉当评级与市场预期出现显著偏差时的向值修复。
+"ts_decay_linear(group_neutralize(-1 * (news_cap - ts_mean(news_cap, 10)) / (rp_css_inverstor + 0.001), subindustry), 10)",资本类新闻情绪激增后，相对于当前投资者截面情绪的剥离式反转。
+"ts_decay_linear(group_neutralize(-1 * (rp_ess_society / (ts_delta(close, 2) + 0.001)), subindustry), 5)",社会责任类情绪与极短期价格变动的残差，识别社会ESG类新闻被市场过度解读后的反弹。
+"ts_decay_linear(group_neutralize(-1 * (news_ton_last / (rp_css_partner + 0.001)), subindustry), 10)",最新新闻语气对截面伙伴情绪的比率反转，剥离伙伴链条影响后的单兵情绪修复。
+"ts_decay_linear(group_neutralize(-1 * (ts_rank(rp_ess_assets, 10) / (ts_rank(news_low_exc_stddev, 10) + 0.001)), subindustry), 6)",资产情绪排名与新闻波动排名的双重残差逻辑，锁定高情绪排名、低波动背景下的伪突破反转。
+"ts_decay_linear(group_neutralize(rank(highest_sales_estimate / (sales_estimate_minimum + 0.001)) + rank(fnd6_oprepsx / (sales + 0.001)), subindustry), 10)",预期销售极差（乐观度）与营业每股收益（财务质量）的组合因子
+"ts_decay_linear(group_neutralize(rank(est_eps - ts_delay(est_eps, 5)) * rank(fnd6_newqv1300_ibq / (fnd6_xopr + 0.001)), subindustry), 10)",EPS预期短期变动与营运成本覆盖率的交叉度量
+"ts_decay_linear(group_neutralize(rank(min_ebitda_guidance / (fnd6_optdrq + 0.001)) - rank(fn_goodwill_acquired_during_period_q / (sales + 0.001)), subindustry), 10)",最低EBITDA指引对递延收入的覆盖能力及其对商誉增长的惩罚
+"ts_decay_linear(group_neutralize(rank(est_capex / (anl4_capex_mean + 0.001)) * rank(fnd6_cptnewqv1300_epsx12), subindustry), 10)",资本支出预算扩张与过去12个月每股现金流的质量共振
+"ts_decay_linear(group_neutralize(rank(pretax_income_actual_reported_value / (highest_sales_estimate + 0.001)) + rank(fnd6_dm / (sales + 0.001)), subindustry), 10)",实际税前收入对最高营收预期的转换率结合折旧摊销力度（资产重度）
+"ts_decay_linear(group_neutralize(rank(anl4_ptpr_low / (fnd2_unrgtxbnfinregfprtxps + 0.001)), subindustry), 10)",保守分析师目标价相对于非正规税收财务项的溢价
+"ts_decay_linear(group_neutralize(rank(est_eps / (est_capex + 0.001)) * rank(fnd6_oprepsx / (fnd6_xopr + 0.001)), subindustry), 10)",预期每股盈利对资本性支出的投入产出比与经营效率的结合
+"ts_decay_linear(group_neutralize(rank(anl4_qf_az_hgih_spfc / (sales_estimate_minimum + 0.001)) - rank(fnd2_a_bnscbmacqrcsts / (sales + 0.001)), subindustry), 10)",分析师高预期分值相对于收购相关成本的稳健性评估
+"ts_decay_linear(group_neutralize(rank(ts_delta(highest_sales_estimate, 10) / (sales + 0.001)) * rank(fnd6_newqv1300_ibq), subindustry), 10)",最高营收预期增量与季度净收入稳定性的协同
+"ts_decay_linear(group_neutralize(rank(est_eps / (ts_delay(est_eps, 20) + 0.001)) + rank(fnd6_dm / (fnd6_optdrq + 0.001)), subindustry), 10)",EPS预期动量与折旧相对于递延收入比率的质量正交
+"ts_decay_linear(group_neutralize(rank(min_ebitda_guidance / (anl4_capex_number + 0.001)) * rank(fnd6_oprepsx), subindustry), 10)",单位资本支出项能产生的最低EBITDA指引与实际经营EPS的验证
+"ts_decay_linear(group_neutralize(rank(anl4_ptpr_low / (pretax_income_actual_reported_value + 0.001)) - rank(fn_goodwill_acquired_during_period_q), subindustry), 10)",保守估值相对于实际税前利润的支撑位及低商誉风险过滤
+"ts_decay_linear(group_neutralize(rank(anl4_capex_mean / (est_capex + 0.001)) * rank(sales / (fnd6_xopr + 0.001)), subindustry), 10)",资本支出保守度（均值大于预期）与营收成本比（利润空间）
+"ts_decay_linear(group_neutralize(rank(est_eps / (sales_estimate_minimum + 0.001)) + rank(fnd2_unrgtxbnfinregfprtxps / (fnd6_newqv1300_ibq + 0.001)), subindustry), 10)",单位预估营收产生的预估EPS与税收项目透明度的结合
+"ts_decay_linear(group_neutralize(rank(ts_delta(min_ebitda_guidance, 5) / (anl4_ptpr_low + 0.001)) * rank(fnd6_cptnewqv1300_epsx12), subindustry), 10)",EBITDA指引上调与现金流质量的共振
+"ts_decay_linear(group_neutralize(rank(highest_sales_estimate / (anl4_capex_mean + 0.001)) - rank(fnd2_a_bnscbmacqrcsts / (fnd6_oprepsx + 0.001)), subindustry), 10)",乐观营收预期需要的资本密集度与收购重组成本对EPS的侵蚀度
+"ts_decay_linear(group_neutralize(rank(anl4_qf_az_hgih_spfc * est_eps) + rank(fnd6_optdrq / (fnd6_xopr + 0.001)), subindustry), 10)",高质量预期评分下的每股收益预期与营运负债/成本比率
+"ts_decay_linear(group_neutralize(rank(pretax_income_actual_reported_value / (anl4_ptpr_low + 0.001)) * rank(sales / (fnd6_dm + 0.001)), subindustry), 10)",实际税前收入对保守价格目标的防御性与资产周转效率
+"ts_decay_linear(group_neutralize(rank(est_eps - ts_delay(est_eps, 10)) / (rank(fn_goodwill_acquired_during_period_q) + 0.001), subindustry), 10)",EPS预期增长趋势被商誉获取风险（并购扩张风险）标准化
+"ts_decay_linear(group_neutralize(rank(min_ebitda_guidance / (sales + 0.001)) + rank(fnd6_oprepsx / (fnd6_cptnewqv1300_epsx12 + 0.001)), subindustry), 10)",指引利润率与经营EPS对现金流的转化质量
+"ts_decay_linear(group_neutralize(rank(ts_delta(implied_volatility_call_10, 5)), subindustry), 10)",短期看涨期权隐含波动率的5日变化率，捕捉市场情绪的快速升温
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_10 / (implied_volatility_mean_60 + 0.001)), subindustry), 12)",极短端IV相对于标准IV的变化，作为动量确认的爆发力指标
+"ts_decay_linear(group_neutralize(rank(pcr_vol_10 / (pcr_oi_all + 0.001)), subindustry), 15)",短期成交PCR相对于全期限持仓PCR的偏离度，衡量即时投机情绪
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_90 - implied_volatility_call_360), subindustry), 10)",IV期限结构的斜率：中短期IV高于长期IV通常对应强烈的方向性驱动
+"ts_decay_linear(group_neutralize(rank(ts_rank(pcr_oi_30, 60)), subindustry), 5)",30日持仓PCR在过去60天的分位数排名，识别机构套保力量的阶段性顶部
+"ts_decay_linear(group_neutralize(rank(call_breakeven_270 / (ts_mean(call_breakeven_270, 20) + 0.001)), subindustry), 10)",270日看涨期权盈亏平衡价相对于其均线的偏离，反映长期看涨预期的拉升
+"ts_decay_linear(group_neutralize(rank(ts_delta(pcr_vol_1080, 10)), subindustry), 20)",超长端成交PCR的10日变动，捕捉长线大宗资金的看跌/看涨情绪转换
+"ts_decay_linear(group_neutralize(rank(ts_stddev(implied_volatility_call_90, 20) / (implied_volatility_call_90 + 0.001)), subindustry), 8)",90日IV的波动性，高IV波动通常伴随趋势的加速或转折确认
+"ts_decay_linear(group_neutralize(rank(pcr_oi_270 / (pcr_oi_all + 0.001)), subindustry), 10)",长端持仓PCR占比，反映长线资金对尾部风险的对冲集中度
+"ts_decay_linear(group_neutralize(rank(ts_corr(implied_volatility_call_10, pcr_vol_10, 20)), subindustry), 10)",短期IV与成交PCR的相关性：正相关通常暗示恐慌性买入
+"ts_decay_linear(group_neutralize(rank(ts_delta(pcr_oi_30, 2) / (ts_stddev(pcr_oi_30, 20) + 0.001)), subindustry), 5)",30日持仓PCR的异动脉冲，寻找短期仓位失衡的套利机会
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_360 / (ts_mean(implied_volatility_call_360, 252) + 0.001)), subindustry), 15)",年化长端IV的均值回归信号，用于过滤过度反应的极端行情
+"ts_decay_linear(group_neutralize(rank(ts_rank(implied_volatility_mean_60, 120) - ts_rank(pcr_oi_all, 120)), subindustry), 10)",综合IV分位数与持仓PCR分位数的差值，构建多维度悲观/乐观指标
+"ts_decay_linear(group_neutralize(rank(call_breakeven_270 - ts_min(call_breakeven_270, 60)), subindustry), 10)",远端看涨期权盈亏平衡价的探底回升，确认价格底部支撑力
+"ts_decay_linear(group_neutralize(rank(ts_delta(implied_volatility_call_10, 3) * ts_delta(pcr_vol_10, 3)), subindustry), 5)",IV变动与PCR成交变动的复合信号，寻找量价确认的动量点
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_90 / (ts_mean(implied_volatility_call_10, 5) + 0.001)), subindustry), 10)",90日IV相对于短期IV均值的溢价，衡量期权定价的期限升水
+"ts_decay_linear(group_neutralize(rank(ts_zscore(pcr_oi_270, 60)), subindustry), 15)",270日持仓PCR的Z-Score，识别长线对冲头寸的异常拥挤度
+"ts_decay_linear(group_neutralize(rank(log(implied_volatility_mean_60 + 0.001) - log(ts_delay(implied_volatility_mean_60, 10) + 0.001)), subindustry), 12)",波动率均值的对数收益率，用于捕捉非线性的情绪波动加速
+"ts_decay_linear(group_neutralize(rank(ts_arg_max(implied_volatility_call_10, 20)), subindustry), 10)",短期IV达到20日最高点后的持续时间，判断恐慌或亢奋情绪的衰减
+"ts_decay_linear(group_neutralize(rank(ts_corr(call_breakeven_270, pcr_oi_30, 40)), subindustry), 20)",远端盈亏平衡价与中短期持仓PCR的相关性，刻画长期预期与短期波动的同步性
+"group_neutralize(ts_decay_linear(-1 * rank(rp_nip_revenue - ts_mean(rp_nip_revenue, 20)), 10), subindustry)",剥离营收情绪的中枢趋势，捕捉营收新闻超预期后的特质性反转情绪。
+"group_neutralize(ts_decay_linear(-1 * rank(news_mins_7_5_pct_up / (news_mins_7_5_chg + 0.001)), 5), subindustry)",利用单位价格波动下的新闻暴涨频率作为过热指标，进行短期过度反应反转。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_css_product - ts_mean(rp_css_product, 15)), 8), subindustry)",剥离产品线新闻的长期动量，针对产品发布或创新情绪的短期脉冲做残差反转。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_ess_labor / (rp_css_assets + 0.001)), 10), subindustry)",相对于资产规模的劳动力情绪残留，反映企业成本压力过载后的情绪修复。
+"group_neutralize(ts_decay_linear(-1 * rank(news_max_up_amt - ts_max(news_max_up_amt, 10)), 5), subindustry)",新闻最大向上振幅在达到近期峰值后表现出的衰竭信号，预示特质性反转。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_css_ptg / (ts_std(rp_css_ptg, 20) + 0.001)), 12), subindustry)",经波动率调整后的价格目标指导意见情绪，剔除市场噪音后的动能剥离。
+"group_neutralize(ts_decay_linear(-1 * rank(ts_delta(rp_ess_dividends, 5)), 6), subindustry)",分红政策情绪的突发变化往往导致估值短期脉冲，利用其残差规律捕捉反转。
+"group_neutralize(ts_decay_linear(-1 * rank(news_mins_2_pct_dn - ts_mean(news_mins_2_pct_dn, 20)), 10), subindustry)",剥离下跌新闻频率的背景均值，识别因负面情绪过度拥挤导致的特质性反弹。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_nip_revenue * rp_css_ptg), 5), subindustry)",营收情绪与价格导向情绪的交互强度，反映多重共识达成后的情绪反转点。
+"group_neutralize(ts_decay_linear(-1 * rank(news_mins_7_5_chg / (ts_std(news_mins_7_5_chg, 20) + 0.001)), 10), subindustry)",高频价格变动情绪的风险平滑项，剥离波动率动量后的特质性价格修正。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_css_assets - ts_rank(rp_css_assets, 60)), 8), subindustry)",资产规模相关新闻在长期序列中的相对位置，识别过度扩张情绪的残差反转。
+"group_neutralize(ts_decay_linear(-1 * rank(news_max_up_amt / (news_mins_7_5_pct_up + 0.001)), 10), subindustry)",最大涨幅与上涨频率的比率，识别单次利好情绪透支而缺乏持续性的个股。
+"group_neutralize(ts_decay_linear(-1 * rank(ts_delta(rp_css_product, 3) * ts_delta(rp_nip_revenue, 3)), 5), subindustry)",产品与营收情绪同步变动的二阶导数，捕捉复合利好后的筹码松动。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_ess_labor - rp_css_assets), 12), subindustry)",劳动力情绪与资产规模情绪的剪刀差残差，反映内部运营压力的极端值反转。
+"group_neutralize(ts_decay_linear(-1 * rank(news_mins_7_5_pct_up - news_mins_2_pct_dn), 10), subindustry)",多空高频新闻频率的非平衡残差，用于捕捉多空博弈白热化后的特质反转。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_ess_dividends / (rp_nip_revenue + 0.001)), 7), subindustry)",分红情绪相对于盈利情绪的溢价，剥离基本面动量后的分配逻辑反转。
+"group_neutralize(ts_decay_linear(-1 * rank(ts_rank(news_mins_7_5_chg, 20)), 5), subindustry)",短期内高频新闻变动幅度的排位残差，识别极端情绪暴露后的均值回归。
+"group_neutralize(ts_decay_linear(-1 * rank(rp_css_ptg - ts_mean(rp_css_ptg, 5)), 10), subindustry)",剥离分析师价格指引的短期趋势，捕捉指引调整过快导致的特质性情绪回撤。
+"group_neutralize(ts_decay_linear(-1 * rank(news_max_up_amt * news_mins_2_pct_dn), 8), subindustry)",极端向上脉冲与极速下跌频率的乘积，识别波动性衰竭点的特质性机会。
+"group_neutralize(ts_decay_linear(-1 * rank(ts_delta(rp_css_assets, 10) / (ts_std(rp_css_assets, 20) + 0.001)), 10), subindustry)",资产扩充新闻的标准化变化率，剥离行业扩张动量后的单票溢价反转。
+"ts_decay_linear(group_neutralize(rank(anl4_qfv4_cfps_high / (assets + 0.001)) * rank(1 / (fn_finite_lived_intangible_assets_net_a + 0.001)), subindustry), 10)",高现金流预期与低无形资产负担正交，寻找预期上行且资产质量轻盈的标的。
+"ts_decay_linear(group_neutralize(rank(est_ebit / (fnd6_cptnewqv1300_lctq + 0.001)) + rank(anl4_gric_high), subindustry), 5)",分析师高增长预期（GRIC）与息税前利润覆盖流动负债能力的组合。
+"ts_decay_linear(group_neutralize(rank(max_share_buyback_guidance / (assets + 0.001)) * rank(anl4_epsa_flag), subindustry), 12)",最大回购指引强度与分析师盈利修正信号（EPSA Flag）的交集。
+"ts_decay_linear(group_neutralize(rank(anl4_rd_exp_high / (employee + 0.001)) * rank(1 / (fn_def_tax_liab_q + 0.001)), subindustry), 8)",人均研发投入高预期与低递延所得税负债，体现创新动力与税务健康度。
+"ts_decay_linear(group_neutralize(rank(min_adjusted_funds_from_operations_adj_guidance / (fnd6_cptnewqv1300_lctq + 0.001)), subindustry), 20)",基于调整后营运资金指引的偿债稳健性分析，捕捉优质现金流预期。
+"ts_decay_linear(group_neutralize(rank(anl4_qfv4_cfps_number) * rank(fnd6_newqv1300_glceeps12 / (fnd6_newqv1300_prcdq + 0.001)), subindustry), 10)",现金流分析师覆盖频次与市盈率倒数的正交，寻找被市场广泛关注且估值合理的绩优股。
+"ts_decay_linear(group_neutralize(rank(est_ebit / (fn_amortization_of_intangible_assets_q + 0.001)) + rank(anl4_cff_number), subindustry), 15)",预期EBIT对无形资产摊销的覆盖程度与融资现金流预期关注度的融合。
+"ts_decay_linear(group_neutralize(rank(anl4_qf_az_dts_spe / (assets + 0.001)) * rank(1 / (fnd2_a_landlandiprts + 0.001)), subindustry), 7)",特定稅务策略预期与低土地资产占比（资产流动性高）的结合。
+"ts_decay_linear(group_neutralize(rank(anl4_gric_high) / (rank(fn_comp_non_opt_nonvested_number_a) + 0.001), subindustry), 10)",高增长指引与较低的非期权未归属补偿数量（股权稀释压力小）的正交。
+"ts_decay_linear(group_neutralize(rank(anl4_qfv4_cfps_high - anl4_qfv4_cfps_number) * rank(est_ebit / (assets + 0.001)), subindustry), 5)",现金流预期离散度修正后的价值因子，结合资产回报率预期。
+"ts_decay_linear(group_neutralize(rank(max_share_buyback_guidance / (fn_def_tax_liab_q + 0.001)), subindustry), 10)",回购指引强度与财务报表质量（递延税项）的防御性组合。
+"ts_decay_linear(group_neutralize(rank(anl4_rd_exp_high / (fnd6_newqv1300_prcdq + 0.001)) * rank(anl4_epsa_flag), subindustry), 12)",单位股价对应的研发投入强度与盈利修正信号的共振。
+"ts_decay_linear(group_neutralize(rank(min_adjusted_funds_from_operations_adj_guidance / (employee + 0.001)), subindustry), 15)",人均营运资金指引强度，衡量企业经营效率的预期改善。
+"ts_decay_linear(group_neutralize(rank(anl4_cff_number / (fnd6_cptnewqv1300_lctq + 0.001)) + rank(anl4_qfv4_cfps_high), subindustry), 8)",融资现金流关注度与现金流指引高点的双重筛选。
+"ts_decay_linear(group_neutralize(rank(est_ebit / (fnd2_a_landlandiprts + 0.001)) * rank(anl4_gric_high), subindustry), 10)",土地资产产出效率的预期改善与高成长指引的正交。
+"ts_decay_linear(group_neutralize(rank(anl4_qf_az_dts_spe) - rank(fn_comp_non_opt_nonvested_number_a / (assets + 0.001)), subindustry), 5)",税务优化预期与管理层激励成本（未归属股份）的质量平衡。
+"ts_decay_linear(group_neutralize(rank(anl4_qfv4_cfps_number / (employee + 0.001)) * rank(est_ebit / (fnd6_cptnewqv1300_lctq + 0.001)), subindustry), 12)",分析师覆盖的人均密集度与短期偿债安全性下的盈利预期。
+"ts_decay_linear(group_neutralize(rank(anl4_rd_exp_high / (fn_finite_lived_intangible_assets_net_a + 0.001)), subindustry), 20)",研发投入相对存量无形资产的扩张倍数，识别处于创新上升期的公司。
+"ts_decay_linear(group_neutralize(rank(max_share_buyback_guidance / (fnd6_newqv1300_glceeps12 + 0.001)), subindustry), 10)",回购计划相对于盈利能力的规模，判断回购指引的可信度与力度。
+"ts_decay_linear(group_neutralize(rank(anl4_epsa_flag) * rank(est_ebit / (fn_def_tax_liab_q + 0.001)), subindustry), 15)",盈利标志位上调与低税务风险结合，通过财务稳健性过滤预期噪音。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl77_2gdna_cashc), rank(fnd6_mkvaltq)), subindustry), 15)",对现金流修正模型进行市值中性化处理，消除大市值因子对现金流质量评估的偏差。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl177_2_globaldevnorthamerica_v502_fc_fwdroe), rank(log(fnd6_mkvaltq + 0.001))), subindustry), 10)",将前瞻性ROE增长模型对对数市值进行回归取残差，提取剔除规模效应后的纯净盈利能力信号。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl77_2surpriseanalystmodel_qsa_surpsn), rank(fnd6_mkvaltq)), subindustry), 5)",分析师盈余惊喜模型的去市值化处理，专注于捕获非对称信息带来的超额收益。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl177_2_deepvaluefactor_ttmcfp), rank(fnd6_mkvaltq)), subindustry), 20)",深证价值因子在剔除市值Beta后的表现，旨在寻找被市场低估的小盘价值机会。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl77_2gdna_pfcf_cf / (fnd6_mkvaltq + 0.001)), rank(fnd6_mkvaltq)), subindustry), 12)",自由现金流收益率在全市场市值中性化后的强度信号，强化现金流对市值的相对性价比。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl77_ovalueanalystmodel_tmtscni_avq), rank(fnd6_mkvaltq)), subindustry), 8)",分析师估值修正模型去市值化，剔除覆盖率偏好导致的市值偏差。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl177_liquidityriskfactor_covol_alt), rank(fnd6_mkvaltq)), subindustry), 14)",流动性风险协方差因子去市值化，捕捉与规模无关的异常流动性溢价。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl177_fa_fixastto), rank(fnd6_mkvaltq)), subindustry), 10)",固定资产周转率经市值回归后的残差信号，衡量同等规模下的资产利用效率。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl177_2_liquidityriskfactor_nlsales), rank(fnd6_mkvaltq)), subindustry), 10)",净销售流动性风险因子去市值化，专注于识别非规模诱导的交易风险。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl77_historicalgrowthfactor_rsqr4qsales3y), rank(fnd6_mkvaltq)), subindustry), 10)",历史销售增长稳定性因子去市值化，排除大中型企业特有的增长稳定性溢价。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd6_newa2v1300_txach), rank(fnd6_mkvaltq)), subindustry), 12)",税收变更透明度因子去市值化，挖掘财务报表质量中的隐匿Alpha。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd2_a_sbcpnargmtwfsptepddvdrt / (fnd6_mkvaltq + 0.001)), rank(fnd6_mkvaltq)), subindustry), 15)",单位市值的股权激励与红利支出比率，经市值中性化后衡量管理层激励纯净度。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd6_newqv1300_optfvgrq), rank(fnd6_mkvaltq)), subindustry), 7)",期权公允价值增长因子去市值化，捕捉市场对公司波动率的非规模定价误差。
+"ts_decay_linear(group_neutralize(residualize(rank(fn_interest_paid_net_a / (fnd6_mkvaltq + 0.001)), rank(fnd6_mkvaltq)), subindustry), 10)",净利息支出密度信号，通过市值中性化剔除财务杠杆对规模的依赖性。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd6_acqgdwl), rank(fnd6_mkvaltq)), subindustry), 18)",收购商誉因子去市值化，识别与其市值规模不成比例的过度扩张风险。
+"ts_decay_linear(group_neutralize(residualize(rank(fn_derivative_notional_amount_q / (fnd6_mkvaltq + 0.001)), rank(fnd6_mkvaltq)), subindustry), 11)",衍生品名义金额密度去市值化，衡量同等规模下公司的对冲或投机激进程度。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd6_cptmfmq_atq), rank(fnd6_mkvaltq)), subindustry), 13)",资本密集度因子去市值化处理，挖掘高效率、轻资产运作的优质标的。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd6_optdrq), rank(fnd6_mkvaltq)), subindustry), 9)",期权漂移率因子经市值中性化，聚焦于技术面与基本面背离引起的异常波动。
+"ts_decay_linear(group_neutralize(residualize(rank(fnd6_newa1v1300_dcom / (fnd6_mkvaltq + 0.001)), rank(fnd6_mkvaltq)), subindustry), 16)",延迟佣金占比去市值化处理，利用渠道端财务指标捕捉被忽视的增长信号。
+"ts_decay_linear(group_neutralize(residualize(rank(mdl177_2_globaldevnorthamerica_v502_fc_fwdroe + mdl77_2gdna_cashc), rank(fnd6_mkvaltq)), subindustry), 10)",盈利与现金流复合模型在剔除市值Beta后的综合评价，追求高质量成长的纯净暴露。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_10 / (implied_volatility_mean_120 + 0.001)), subindustry), 10)",短端Call隐含波动率相对于长端中枢的溢价，捕捉短期波动率爆发的动量信号。
+"ts_decay_linear(group_neutralize(rank(ts_delta(implied_volatility_mean_skew_10, 5)), subindustry), 10)",短期波动率偏斜（Skew）的变动率，识别期权市场对尾部风险预期的快速修正。
+"ts_decay_linear(group_neutralize(-rank(pcr_vol_90 / (pcr_vol_720 + 0.001)), subindustry), 10)",中期成交量PCR相对于长期均值的偏离，利用反向指标逻辑捕捉悲观情绪过热后的反转。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_10 / (historical_volatility_30 + 0.001)), subindustry), 10)",隐含波动率与历史波动率的偏离度，衡量市场对未来价格波动的超前定价程度。
+"ts_decay_linear(group_neutralize(rank(put_breakeven_270 / (call_breakeven_360 + 0.001)), subindustry), 10)",长期认沽与认购盈亏平衡点的比例，反映机构投资者对长期价格运行区间的预期位移。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_10 / (implied_volatility_mean_skew_270 + 0.001)), subindustry), 10)",短期偏斜与长期偏斜的期限结构，用于确认当前价格趋势的期权定价支撑力。
+"ts_decay_linear(group_neutralize(-rank(pcr_oi_270) * rank(implied_volatility_mean_skew_10), subindustry), 10)",持仓量PCR与短期偏斜的复合指标，识别深跌预期下的市场筑底动量。
+"ts_decay_linear(group_neutralize(rank(ts_stddev(implied_volatility_call_10, 20) / (implied_volatility_mean_120 + 0.001)), subindustry), 10)",隐含波动率的波动性（Vol of Vol），衡量期权市场情绪的不确定性加速。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_270) / (rank(pcr_vol_720) + 0.001), subindustry), 10)",长周期风险偏斜与长周期成交压力的对比，筛选具有长期基本面支撑的个股。
+"ts_decay_linear(group_neutralize(rank(ts_delta(put_breakeven_270, 10)), subindustry), 10)",认沽期权盈亏平衡点的趋势变动，作为下行风险确认的领先指标。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_10) - rank(historical_volatility_30), subindustry), 10)",IV-HV价差的秩差，捕捉由于非对称信息导致的权利金异常上涨。
+"ts_decay_linear(group_neutralize(-rank(pcr_vol_90 / (pcr_oi_270 + 0.001)), subindustry), 10)",成交量PCR相对于持仓量PCR的活跃度增强，反映短期投机情绪的爆发。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_10) * rank(historical_volatility_30), subindustry), 10)",高历史波动环境下的偏斜因子加强，识别剧烈波动中的方向性确认信号。
+"ts_decay_linear(group_neutralize(rank(ts_rank(implied_volatility_call_10, 252)), subindustry), 10)",短期IV在过去一年中的相对位置，识别波动率回归均值前的极值机会。
+"ts_decay_linear(group_neutralize(-rank(call_breakeven_360 / (historical_volatility_30 + 0.001)), subindustry), 10)",认购盈亏平衡点相对于波动率的紧缩度，寻找被低估的看涨空间。
+"ts_decay_linear(group_neutralize(rank(pcr_vol_720 / (implied_volatility_mean_120 + 0.001)), subindustry), 10)",利用长期波动率中枢对长期成交PCR进行标准化，剥离系统性波动后的纯净情绪特征。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_mean_skew_10 - implied_volatility_mean_skew_270), subindustry), 10)",偏斜因子的期限利差，捕捉期权市场对近期事件风险的异常定价。
+"ts_decay_linear(group_neutralize(rank(ts_delta(pcr_vol_90, 5) / (ts_delta(pcr_vol_720, 5) + 0.001)), subindustry), 10)",PCR变动率的二阶动量，捕捉悲观/乐观情绪转换的拐点。
+"ts_decay_linear(group_neutralize(rank(implied_volatility_call_10) * rank(put_breakeven_270), subindustry), 10)",高IV与深远盈亏平衡点的耦合，筛选出具有强烈趋势预期的标的。
+"ts_decay_linear(group_neutralize(rank(ts_stddev(pcr_oi_270, 10) / (pcr_vol_90 + 0.001)), subindustry), 10)",持仓分布的不稳定性与成交活跃度的比值，寻找筹码结构发生剧烈变动的个股。
