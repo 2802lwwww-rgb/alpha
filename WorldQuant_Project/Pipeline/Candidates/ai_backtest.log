@@ -1,0 +1,136 @@
+2026-05-04 12:03:16,795 - [INFO] - [OK] AI Backtester Authenticated.
+2026-05-04 12:03:17,251 - [INFO] - Loaded 600 AI-crafted alphas. Starting 3-thread backtest...
+2026-05-04 12:03:37,975 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_max_up_ret, rp_ess_revenue, 125), subindustry), 42)
+2026-05-04 12:03:58,815 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_css_assets, rp_nip_assets, 90), subindustry), 24)
+2026-05-04 12:07:23,924 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_max_up_ret, 60) / (ts_std_dev(rp_css_credit, 60) + 0.001), subindustry), 48) | Sharpe: -0.55 | Fit: -0.14 | SC: 0.0000
+2026-05-04 12:07:45,745 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_css_credit, 252) / (ts_std_dev(news_tot_ticks, 252) + 0.001), subindustry), 30) | Sharpe: 0.63 | Fit: 0.19 | SC: 0.0000
+2026-05-04 12:08:07,141 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_mins_10_pct_dn, rp_css_assets, 200), subindustry), 59)
+2026-05-04 12:09:05,845 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_mins_10_pct_dn, news_pct_5_min, 180, rettype=2), subindustry), 55) | Sharpe: -0.11 | Fit: -0.03 | SC: 0.0000
+2026-05-04 12:11:11,444 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_pct_5_min, 140) / (ts_std_dev(rp_nip_assets, 140) + 0.001), subindustry), 20) | Sharpe: 0.48 | Fit: 0.12 | SC: 0.0000
+2026-05-04 12:11:50,072 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_max_up_ret, rp_css_credit, 220, rettype=2), subindustry), 45) | Sharpe: -0.09 | Fit: -0.04 | SC: 0.0000
+2026-05-04 12:11:52,517 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_ess_revenue, news_pct_5_min, 75), subindustry), 33)
+2026-05-04 12:12:12,234 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_ess_revenue, news_tot_ticks, 110, rettype=2), subindustry), 37) | Sharpe: -0.51 | Fit: -0.32 | SC: 0.0000
+2026-05-04 12:12:34,109 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_nip_assets, rp_ess_revenue, 190), subindustry), 60)
+2026-05-04 12:15:38,281 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_tot_ticks, 160) / (ts_std_dev(news_mins_10_pct_dn, 160) + 0.001), subindustry), 52) | Sharpe: 0.22 | Fit: 0.04 | SC: 0.0000
+2026-05-04 12:15:59,621 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_css_assets, news_max_up_ret, 240, rettype=2), subindustry), 28) | Sharpe: -0.23 | Fit: -0.08 | SC: 0.0000
+2026-05-04 12:16:20,236 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_max_up_ret, rp_css_assets, 210), subindustry), 50)
+2026-05-04 12:17:46,151 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_mins_10_pct_dn, 115) / (ts_std_dev(news_pct_5_min, 115) + 0.001), subindustry), 41) | Sharpe: 0.14 | Fit: 0.04 | SC: 0.0000
+2026-05-04 12:20:25,709 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_css_credit, news_tot_ticks, 135, rettype=2), subindustry), 25) | Sharpe: -0.58 | Fit: -0.37 | SC: 0.0000
+2026-05-04 12:20:46,792 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_tot_ticks, rp_css_credit, 252), subindustry), 22)
+2026-05-04 12:21:11,719 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_pct_5_min, news_mins_10_pct_dn, 155, rettype=2), subindustry), 46) | Sharpe: -0.60 | Fit: -0.51 | SC: 0.0000
+2026-05-04 12:21:31,387 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_nip_assets, 80) / (ts_std_dev(rp_ess_revenue, 80) + 0.001), subindustry), 34) | Sharpe: 0.29 | Fit: 0.05 | SC: 0.0000
+2026-05-04 12:21:32,877 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_uptargetpercent, implied_volatility_mean_30, 252), subindustry), 35)
+2026-05-04 12:23:53,320 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_css_assets, 100) / (ts_std_dev(news_max_up_ret, 100) + 0.001), subindustry), 39) | Sharpe: -0.33 | Fit: -0.06 | SC: 0.0000
+2026-05-04 12:24:14,194 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_longtermepsgrowthest, historical_volatility_10, 150), subindustry), 25)
+2026-05-04 12:24:17,763 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_netearningsrevision, 180) / (ts_std_dev(fnd6_newa1v1300_ceq, 180) + 0.001), subindustry), 42) | Sharpe: 0.07 | Fit: 0.01 | SC: 0.0000
+2026-05-04 12:26:42,836 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(snt1_d1_earningssurprise, fn_business_combination_purchase_price_q, 240, rettype=2), subindustry), 33) | Sharpe: -0.22 | Fit: -0.20 | SC: 0.0000
+2026-05-04 12:27:04,263 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_cored1_score, implied_volatility_put_90, 80), subindustry), 22)
+2026-05-04 12:27:18,822 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_fundamentalfocusrank, 120) / (ts_std_dev(put_breakeven_10, 120) + 0.001), subindustry), 48) | Sharpe: -0.08 | Fit: -0.02 | SC: 0.0000
+2026-05-04 12:29:31,003 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_dynamicfocusrank, 220) / (ts_std_dev(fnd6_cptmfmq_atq, 220) + 0.001), subindustry), 40) | Sharpe: -0.10 | Fit: -0.04 | SC: 0.0000
+2026-05-04 12:29:51,613 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(implied_volatility_put_60, fnd2_dbplanepdfbnfpytwo, 180), subindustry), 29)
+2026-05-04 12:32:36,985 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(option_breakeven_120, 200) / (ts_std_dev(fnd6_txdbclq, 200) + 0.001), subindustry), 36) | Sharpe: 0.11 | Fit: 0.04 | SC: 0.0000
+2026-05-04 12:32:57,702 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(fnd6_recco, snt1_d1_uptargetpercent, 130), subindustry), 45)
+2026-05-04 12:33:38,445 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(pcr_vol_90, fnd6_fatp, 90, rettype=2), subindustry), 24) | Sharpe: -0.74 | Fit: -1.35 | SC: 0.0000
+2026-05-04 12:35:03,405 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_netearningsrevision, 210) / (ts_std_dev(implied_volatility_put_60, 210) + 0.001), subindustry), 58) | Sharpe: -0.81 | Fit: -0.59 | SC: 0.0000
+2026-05-04 12:35:24,103 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_longtermepsgrowthest, option_breakeven_20, 245), subindustry), 52)
+2026-05-04 12:37:49,668 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_fundamentalfocusrank, 140) / (ts_std_dev(historical_volatility_10, 140) + 0.001), subindustry), 27) | Sharpe: -0.16 | Fit: -0.05 | SC: 0.0000
+2026-05-04 12:38:10,279 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_cored1_score, fn_business_combination_purchase_price_q, 170), subindustry), 44)
+2026-05-04 12:38:25,744 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(snt1_d1_analystcoverage, fnd6_newa1v1300_ceq, 160, rettype=2), subindustry), 31) | Sharpe: -0.08 | Fit: -0.02 | SC: 0.0000
+2026-05-04 12:39:07,977 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_post_vwap, news_eod_high, 124), subindustry), 32)
+2026-05-04 12:40:36,360 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_dynamicfocusrank, 190) / (ts_std_dev(implied_volatility_put_90, 190) + 0.001), subindustry), 59) | Sharpe: -0.20 | Fit: -0.07 | SC: 0.0000
+2026-05-04 12:43:24,103 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_nip_dividends, rp_css_business, 180, rettype=2), subindustry), 25) | Sharpe: -0.44 | Fit: -0.27 | SC: 0.0000
+2026-05-04 12:43:57,083 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_eod_close, 205) / (ts_std_dev(news_atr14, 205) + 0.001), subindustry), 41) | Sharpe: 0.10 | Fit: 0.01 | SC: 0.0000
+2026-05-04 12:47:43,042 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_post_vwap, 140) / (ts_std_dev(news_eod_close, 140) + 0.001), subindustry), 30) | Sharpe: -1.08 | Fit: -0.48 | SC: 0.0000
+2026-05-04 12:48:12,668 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_mins_5_pct_dn, news_atr_ratio, 75), subindustry), 55)
+2026-05-04 12:48:20,550 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_eod_high, rp_css_business, 212), subindustry), 36)
+2026-05-04 12:50:57,546 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_mins_5_pct_dn, 165) / (ts_std_dev(news_post_vwap, 165) + 0.001), subindustry), 59) | Sharpe: 0.01 | Fit: 0.00 | SC: 0.0000
+2026-05-04 12:51:38,528 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_atr_ratio, news_atr14, 88), subindustry), 28)
+2026-05-04 12:52:10,617 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_atr14, news_atr_ratio, 95, rettype=2), subindustry), 48) | Sharpe: 0.22 | Fit: 0.15 | SC: 0.0000
+2026-05-04 12:54:07,397 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_css_business, 132) / (ts_std_dev(news_post_vwap, 132) + 0.001), subindustry), 37) | Sharpe: 0.03 | Fit: 0.00 | SC: 0.0000
+2026-05-04 12:54:28,291 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_atr14, rp_nip_dividends, 110), subindustry), 22)
+2026-05-04 12:59:18,547 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_post_vwap, 195) / (ts_std_dev(news_atr_ratio, 195) + 0.001), subindustry), 45) | Sharpe: -0.27 | Fit: -0.06 | SC: 0.0000
+2026-05-04 12:59:39,360 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_mins_5_pct_dn, rp_css_business, 65), subindustry), 40)
+2026-05-04 13:03:08,310 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_nip_dividends, 252) / (ts_std_dev(news_post_vwap, 252) + 0.001), subindustry), 29) | Sharpe: -0.32 | Fit: -0.04 | SC: 0.0000
+2026-05-04 13:03:29,920 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_eod_high, news_eod_close, 155, rettype=2), subindustry), 33) | Sharpe: -0.29 | Fit: -0.14 | SC: 0.0000
+2026-05-04 13:04:30,378 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_eod_close, news_atr14, 172), subindustry), 42)
+2026-05-04 13:04:51,184 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(bookvalue_ps, anl4_qf_az_cfps_mean, 120), subindustry), 30)
+2026-05-04 13:06:14,533 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_post_vwap, 105) / (ts_std_dev(rp_css_business, 105) + 0.001), subindustry), 60) | Sharpe: -0.67 | Fit: -0.22 | SC: 0.0000
+2026-05-04 13:09:39,796 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(mdl77_historicalgrowthfactor_susgrowth, 252) / (ts_std_dev(anl4_rd_exp_median, 252) + 0.001), subindustry), 45) | Sharpe: 0.15 | Fit: 0.04 | SC: 0.0000
+2026-05-04 13:10:00,437 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(mdl177_2_pricemomentumfactor_varresirtn, fn_liab_fair_val_a, 200), subindustry), 50)
+2026-05-04 13:12:27,250 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(est_shequity, 180) / (ts_std_dev(mdl177_historicalgrowthmodel_slope4qsales3y, 180) + 0.001), subindustry), 35) | Sharpe: 0.14 | Fit: 0.05 | SC: 0.0000
+2026-05-04 13:13:29,679 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(fn_comp_options_out_number_a, shares_outstanding_max_guidance, 252), subindustry), 60)
+2026-05-04 13:14:34,472 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(fnd6_dilavx, anl4_netprofita_low, 150, rettype=2), subindustry), 28) | Sharpe: -0.03 | Fit: -0.00 | SC: 0.0000
+2026-05-04 13:16:59,662 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(fnd6_newqv1300_esopnrq, anl4_cfi_number, 125), subindustry), 48)
+2026-05-04 13:17:46,213 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(mdl177_fangma_mam_usa_fangma_mam5, fnd6_newqv1300_tfvceq, 220, rettype=2), subindustry), 25) | Sharpe: 0.71 | Fit: 0.79 | SC: 0.0000
+2026-05-04 13:18:42,197 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(mdl77_2earningmomentumfactor400_stockrating, 100) / (ts_std_dev(fnd6_newa2v1300_txdb, 100) + 0.001), subindustry), 40) | Sharpe: 0.11 | Fit: 0.02 | SC: 0.0000
+2026-05-04 13:19:03,192 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(anl4_qf_az_cfps_mean, mdl177_historicalgrowthfactor_chg3yocfp_alt, 160), subindustry), 21)
+2026-05-04 13:20:45,555 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(anl4_ebitda_flag, 240) / (ts_std_dev(mdl177_2_pricemomentumfactor_indrelrtn5d_, 240) + 0.001), subindustry), 55) | Sharpe: 0.80 | Fit: 0.82 | SC: 0.0000
+2026-05-04 13:23:12,356 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(fnd6_newa1v1300_ivncf, 190) / (ts_std_dev(anl4_rd_exp_median, 190) + 0.001), subindustry), 38) | Sharpe: 0.08 | Fit: 0.02 | SC: 0.0000
+2026-05-04 13:23:33,512 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(mdl177_historicalgrowthmodel_slope4qsales3y, fn_liab_fair_val_a, 245), subindustry), 59)
+2026-05-04 13:29:21,704 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(anl4_netprofita_low, 175) / (ts_std_dev(fnd6_dilavx, 175) + 0.001), subindustry), 42) | Sharpe: -0.35 | Fit: -0.12 | SC: 0.0000
+2026-05-04 13:29:42,940 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(fnd6_newqv1300_tfvceq, anl4_ebitda_flag, 140), subindustry), 52)
+2026-05-04 13:31:22,450 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_mins_2_pct_dn, news_mins_5_pct_up, 130), subindustry), 45)
+2026-05-04 13:32:48,219 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(fnd6_newa2v1300_txdb, 215) / (ts_std_dev(mdl177_fangma_mam_usa_fangma_mam5, 215) + 0.001), subindustry), 47) | Sharpe: -0.98 | Fit: -0.89 | SC: 0.0000
+2026-05-04 13:34:47,987 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_css_earnings, 200) / (ts_std_dev(rp_ess_equity, 200) + 0.001), subindustry), 55) | Sharpe: -0.71 | Fit: -0.15 | SC: 0.0000
+2026-05-04 13:35:29,309 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_nip_legal, news_mins_10_pct_up, 90), subindustry), 40)
+2026-05-04 13:36:14,400 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_max_up_ret, news_mins_10_pct_up, 180, rettype=2), subindustry), 32) | Sharpe: -0.11 | Fit: -0.04 | SC: 0.0000
+2026-05-04 13:38:18,219 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_ess_equity, news_max_up_ret, 150, rettype=2), subindustry), 58) | Sharpe: -0.35 | Fit: -0.16 | SC: 0.0000
+2026-05-04 13:39:37,020 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_mins_5_pct_up, 252) / (ts_std_dev(rp_nip_assets, 252) + 0.001), subindustry), 22) | Sharpe: -0.27 | Fit: -0.07 | SC: 0.0000
+2026-05-04 13:41:44,271 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_nip_legal, 175) / (ts_std_dev(news_mins_2_pct_dn, 175) + 0.001), subindustry), 37) | Sharpe: 0.22 | Fit: 0.04 | SC: 0.0000
+2026-05-04 13:42:01,022 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_mins_10_pct_up, rp_css_earnings, 220, rettype=2), subindustry), 43) | Sharpe: -0.02 | Fit: -0.00 | SC: 0.0000
+2026-05-04 13:42:05,024 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_max_up_ret, rp_ess_equity, 75), subindustry), 50)
+2026-05-04 13:44:29,068 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_nip_assets, news_mins_5_pct_up, 190, rettype=2), subindustry), 34) | Sharpe: 0.03 | Fit: 0.00 | SC: 0.0000
+2026-05-04 13:44:50,265 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_css_earnings, news_mins_2_pct_dn, 160), subindustry), 44)
+2026-05-04 13:45:28,739 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_nip_assets, rp_css_earnings, 110), subindustry), 28)
+2026-05-04 13:47:08,304 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_mins_10_pct_up, 140) / (ts_std_dev(rp_nip_legal, 140) + 0.001), subindustry), 26) | Sharpe: 0.34 | Fit: 0.16 | SC: 0.0000
+2026-05-04 13:47:29,011 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_ess_equity, rp_nip_legal, 240), subindustry), 59)
+2026-05-04 13:47:33,901 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_max_up_ret, 210) / (ts_std_dev(news_mins_10_pct_up, 210) + 0.001), subindustry), 52) | Sharpe: 0.47 | Fit: 0.12 | SC: 0.0000
+2026-05-04 13:47:52,021 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_mins_5_pct_up, rp_css_earnings, 85, rettype=2), subindustry), 29) | Sharpe: -0.27 | Fit: -0.22 | SC: 0.0000
+2026-05-04 13:48:12,855 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_mins_10_pct_up, news_mins_5_pct_up, 100), subindustry), 38)
+2026-05-04 13:49:33,365 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_mins_2_pct_dn, 115) / (ts_std_dev(rp_nip_assets, 115) + 0.001), subindustry), 31) | Sharpe: 0.44 | Fit: 0.11 | SC: 0.0000
+2026-05-04 13:50:17,717 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_nip_legal, news_max_up_ret, 135, rettype=2), subindustry), 41) | Sharpe: -0.37 | Fit: -0.19 | SC: 0.0000
+2026-05-04 13:50:35,852 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_earningsrevision, historical_volatility_120, 126), subindustry), 42)
+2026-05-04 13:50:38,978 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_stockrank, fnd6_newa2v1300_oancf, 252), subindustry), 55)
+2026-05-04 13:50:56,802 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(implied_volatility_put_1080, fn_liab_fair_val_q, 90), subindustry), 28)
+2026-05-04 13:51:17,367 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(fnd2_ebitfr, forward_price_30, 200), subindustry), 60)
+2026-05-04 13:51:18,790 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_nip_assets, 195) / (ts_std_dev(rp_ess_equity, 195) + 0.001), subindustry), 47) | Sharpe: 0.43 | Fit: 0.08 | SC: 0.0000
+2026-05-04 13:52:21,087 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_cored1_score, pcr_oi_all, 180), subindustry), 35)
+2026-05-04 13:54:25,141 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_netearningsrevision, 120) / (ts_std_dev(historical_volatility_120, 120) + 0.001), subindustry), 25) | Sharpe: -0.57 | Fit: -0.33 | SC: 0.0000
+2026-05-04 13:54:43,247 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_uptargetpercent, 252) / (ts_std_dev(parkinson_volatility_150, 252) + 0.001), subindustry), 48) | Sharpe: -0.25 | Fit: -0.10 | SC: 0.0000
+2026-05-04 13:55:25,779 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(fnd6_fopo, 100) / (ts_std_dev(snt1_d1_analystcoverage, 100) + 0.001), subindustry), 32) | Sharpe: 0.30 | Fit: 0.12 | SC: 0.0000
+2026-05-04 13:57:09,185 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(fnd6_cptnewqv1300_rectq, 150) / (ts_std_dev(implied_volatility_put_1080, 150) + 0.001), subindustry), 50) | Sharpe: 0.06 | Fit: 0.01 | SC: 0.0000
+2026-05-04 13:59:10,401 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_fundamentalfocusrank, 240) / (ts_std_dev(parkinson_volatility_150, 240) + 0.001), subindustry), 22) | Sharpe: -0.20 | Fit: -0.08 | SC: 0.0000
+2026-05-04 13:59:12,500 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_dynamicfocusrank, 130) / (ts_std_dev(call_breakeven_10, 130) + 0.001), subindustry), 36) | Sharpe: -0.11 | Fit: -0.03 | SC: 0.0000
+2026-05-04 14:00:57,296 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(fn_entity_common_stock_shares_out_q, 180) / (ts_std_dev(pcr_oi_120, 180) + 0.001), subindustry), 41) | Sharpe: -0.28 | Fit: -0.15 | SC: 0.0000
+2026-05-04 14:02:15,430 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(snt1_cored1_score, snt1_d1_earningsrevision, 90, rettype=2), subindustry), 29) | Sharpe: 0.15 | Fit: 0.05 | SC: 0.0000
+2026-05-04 14:05:13,331 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(fnd6_newa2v1300_oancf, fn_liab_fair_val_q, 252, rettype=2), subindustry), 47) | Sharpe: -0.05 | Fit: -0.01 | SC: 0.0000
+2026-05-04 14:06:11,126 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(snt1_d1_stockrank, pcr_oi_all, 120, rettype=2), subindustry), 58) | Sharpe: 0.15 | Fit: 0.03 | SC: 0.0000
+2026-05-04 14:08:18,137 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(snt1_d1_netearningsrevision, fn_entity_common_stock_shares_out_q, 200, rettype=2), subindustry), 53) | Sharpe: 0.37 | Fit: 0.15 | SC: 0.0000
+2026-05-04 14:17:39,666 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_css_mna, news_mins_10_chg, 120), subindustry), 42)
+2026-05-04 14:22:03,685 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_vol_stddev, news_high_exc_stddev, 180, rettype=2), subindustry), 50) | Sharpe: 0.13 | Fit: 0.05 | SC: 0.0000
+2026-05-04 14:22:24,407 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_nip_marketing, rp_ess_society, 250), subindustry), 28)
+2026-05-04 14:22:29,241 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_css_assets, 240) / (ts_std_dev(rp_ess_credit_ratings, 240) + 0.001), subindustry), 35) | Sharpe: 0.05 | Fit: 0.00 | SC: 0.0000
+2026-05-04 14:23:19,107 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_ess_credit_ratings, news_high_exc_stddev, 130), subindustry), 22)
+2026-05-04 14:25:35,364 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_css_assets, news_vol_stddev, 210, rettype=2), subindustry), 56) | Sharpe: -0.35 | Fit: -0.19 | SC: 0.0000
+2026-05-04 14:26:51,060 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_mins_10_chg, 120) / (ts_std_dev(rp_css_mna, 120) + 0.001), subindustry), 44) | Sharpe: 0.56 | Fit: 0.24 | SC: 0.0000
+2026-05-04 14:27:25,625 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_nip_marketing, 95) / (ts_std_dev(rp_ess_society, 95) + 0.001), subindustry), 48) | Sharpe: 0.74 | Fit: 0.29 | SC: 0.0000
+2026-05-04 14:27:53,347 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(news_mins_10_chg, news_vol_stddev, 245), subindustry), 51)
+2026-05-04 14:29:36,044 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_nip_marketing, rp_ess_society, 140, rettype=2), subindustry), 39) | Sharpe: -0.38 | Fit: -0.23 | SC: 0.0000
+2026-05-04 14:29:40,775 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_css_mna, rp_css_assets, 175, rettype=2), subindustry), 33) | Sharpe: -0.24 | Fit: -0.14 | SC: 0.0000
+2026-05-04 14:29:50,458 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_ess_credit_ratings, 155) / (ts_std_dev(news_high_exc_stddev, 155) + 0.001), subindustry), 25) | Sharpe: 0.53 | Fit: 0.15 | SC: 0.0000
+2026-05-04 14:30:18,560 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_css_assets, rp_css_mna, 110), subindustry), 47)
+2026-05-04 14:33:02,791 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_ess_society, rp_nip_marketing, 190), subindustry), 43)
+2026-05-04 14:34:21,563 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(news_high_exc_stddev, rp_ess_credit_ratings, 230, rettype=2), subindustry), 31) | Sharpe: -0.23 | Fit: -0.13 | SC: 0.0000
+2026-05-04 14:35:47,856 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(rp_css_mna, 165) / (ts_std_dev(news_vol_stddev, 165) + 0.001), subindustry), 29) | Sharpe: 0.29 | Fit: 0.03 | SC: 0.0000
+2026-05-04 14:36:08,416 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(rp_ess_credit_ratings, rp_ess_society, 220), subindustry), 36)
+2026-05-04 14:37:06,255 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(rp_css_assets, news_mins_10_chg, 125, rettype=2), subindustry), 58) | Sharpe: 0.86 | Fit: 1.01 | SC: 0.0000
+2026-05-04 14:37:12,843 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_vol_stddev, 205) / (ts_std_dev(news_mins_10_chg, 205) + 0.001), subindustry), 54) | Sharpe: -0.02 | Fit: -0.00 | SC: 0.0000
+2026-05-04 14:37:27,372 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_uptargetpercent, implied_volatility_mean_60, 120), subindustry), 30)
+2026-05-04 14:38:53,035 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(news_high_exc_stddev, 145) / (ts_std_dev(rp_nip_marketing, 145) + 0.001), subindustry), 24) | Sharpe: 0.21 | Fit: 0.03 | SC: 0.0000
+2026-05-04 14:39:11,426 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_regression(sales_ps, snt1_d1_stockrank, 180, rettype=2), subindustry), 25) | Sharpe: 0.02 | Fit: 0.00 | SC: 0.0000
+2026-05-04 14:39:54,572 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(implied_volatility_call_720, fnd2_q_flintasamt1expytwo, 90), subindustry), 40)
+2026-05-04 14:40:38,976 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(snt1_d1_buyrecpercent, 250) / (ts_std_dev(parkinson_volatility_150, 250) + 0.001), subindustry), 45) | Sharpe: -0.21 | Fit: -0.07 | SC: 0.0000
+2026-05-04 14:40:59,650 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(snt1_d1_dynamicfocusrank, fnd6_newqv1300_rectaq, 100), subindustry), 22)
+2026-05-04 14:43:58,874 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(pcr_oi_1080, 150) / (ts_std_dev(snt1_d1_downtargetpercent, 150) + 0.001), subindustry), 50) | Sharpe: 0.17 | Fit: 0.05 | SC: 0.0000
+2026-05-04 14:44:35,654 - [INFO] - FINAL | ts_decay_linear(group_neutralize(ts_rank(fn_comp_options_exercises_weighted_avg_a, 130) / (ts_std_dev(implied_volatility_put_90, 130) + 0.001), subindustry), 58) | Sharpe: -0.42 | Fit: -0.24 | SC: 0.0000
+2026-05-04 14:44:58,135 - [WARNING] - SIM ERROR for ts_decay_linear(group_neutralize(ts_correlation(fnd2_a_unrgtxbnfthatwdiptetxr, snt1_d1_dtstsespe, 210), subindustry), 33)
